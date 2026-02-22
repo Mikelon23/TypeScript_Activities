@@ -5,3 +5,7 @@ console.log(mensaje);
 function sumarPrecios(precio1: number, precio2: number) {
     return precio1 + precio2;
 }
+
+let resultado = sumarPrecios(10, 20);
+console.log(resultado);
+
