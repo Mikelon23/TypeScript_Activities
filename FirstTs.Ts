@@ -27,10 +27,16 @@ let precios: number[] = [10, 20, 30];
 
 //objetos
 interface Producto {
-  nombre: string;
-  precio: number;
-  enStock: boolean;
+    nombre: string;
+    precio: number;
+    enStock: boolean;
 }
+
+let miProducto: Producto = {
+    nombre: "Zapatillas",
+    precio: 120,
+    enStock: true
+};
 
 
 
