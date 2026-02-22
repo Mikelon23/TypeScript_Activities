@@ -18,3 +18,11 @@ Inferencia de tipos.
 
 */
 
+//Recuerda el patrón estricto de TypeScript: variable : tipo = valor.
+
+//Módulo 2: Estructuras de Datos
+
+//listas
+let precios: number[] = [10, 20, 30];
+
+//
