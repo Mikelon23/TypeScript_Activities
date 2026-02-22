@@ -25,4 +25,9 @@ Inferencia de tipos.
 //listas
 let precios: number[] = [10, 20, 30];
 
-//
+//objetos
+let producto = {
+    nombre: "Zapatillas",
+    precio: 120,
+    enStock: true
+};
