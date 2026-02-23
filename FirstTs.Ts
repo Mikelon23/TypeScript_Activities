@@ -41,8 +41,9 @@ let miProducto: Producto = {
 //el símbolo que usamos para indicar que algo es opcional es el signo de interrogación ?.
 
 interface Producto {
-  nombre: string;
-  precio: number;
-  enStock: boolean;
-  descuento?: number; // 👈 ¡Aquí está la magia!
+    nombre: string;
+    precio: number;
+    enStock: boolean;
+    descuento?: number; // ¡Aquí está la magia!
 }
+
