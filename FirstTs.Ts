@@ -25,7 +25,7 @@ Inferencia de tipos.
 //listas
 let precios: number[] = [10, 20, 30];
 
-//objetos
+//objetos : "contrato" o "molde" (usualmente llamado interface o type)
 interface Producto {
     nombre: string;
     precio: number;
@@ -38,5 +38,11 @@ let miProducto: Producto = {
     enStock: true
 };
 
+//el símbolo que usamos para indicar que algo es opcional es el signo de interrogación ?.
 
-
+interface Producto {
+  nombre: string;
+  precio: number;
+  enStock: boolean;
+  descuento?: number; // 👈 ¡Aquí está la magia!
+}
