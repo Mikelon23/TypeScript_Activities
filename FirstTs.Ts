@@ -49,3 +49,6 @@ interface Producto {
 
 //Gracias a ese ?, ahora puedes crear un producto con descuento y otro sin descuento
 
+let zapatillas: Producto = { nombre: "Zapatillas", precio: 120, enStock: true }; 
+let camiseta: Producto = { nombre: "Camiseta", precio: 30, enStock: true, descuento: 10 };
+
