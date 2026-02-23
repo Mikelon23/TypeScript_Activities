@@ -47,3 +47,5 @@ interface Producto {
     descuento?: number; // ¡Aquí está la magia!
 }
 
+//Gracias a ese ?, ahora puedes crear un producto con descuento y otro sin descuento
+
