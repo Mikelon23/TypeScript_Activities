@@ -49,10 +49,15 @@ let zapatillas: Producto = {
     enStock: true
 };
 
-let camiseta: Producto = { nombre: "Camiseta", precio: 30, enStock: true, descuento: 10 };
+let camiseta: Producto = {
+    nombre: "Camiseta",
+    precio: 30,
+    enStock: true,
+    descuento: 10
+};
 
-//Union Types útiles cuando los datos pueden venir en diferentes 
-//formatos, pero aún así quieres mantener el control estricto sobre ellos
-
+/*Union Types útiles cuando los datos pueden venir en 
+diferentes formatos, pero aún así quieres 
+mantener el control estricto sobre ellos*/
 let miID: string | number;
 
