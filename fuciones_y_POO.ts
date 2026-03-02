@@ -14,24 +14,3 @@ function obtenerPrecioFinal(producto: Producto): number {
     }
     return producto.precio;
 }
-
-//Clases
-class Producto {
-    nombre: string;
-    precio: number;
-    enStock: boolean;
-    descuento?: number;
-
-    constructor(nombre: string, precio: number, enStock: boolean, descuento?: number) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.enStock = enStock;
-        this.descuento = descuento;
-    }
-}
-
-//Herencia
-class ProductoElectronico extends Producto {
-    garantiaMeses: number;
-
-    constructor(nombre: string, precio: number, enStock: boolean, garantiaMeses: number) {
