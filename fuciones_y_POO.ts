@@ -32,3 +32,6 @@ class Producto {
 
 //Herencia
 class ProductoElectronico extends Producto {
+    garantiaMeses: number;
+
+    constructor(nombre: string, precio: number, enStock: boolean, garantiaMeses: number) {
