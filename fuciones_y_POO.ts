@@ -18,3 +18,14 @@ function obtenerPrecioFinal(producto: Producto): number {
 //Clases
 class Producto {
     nombre: string;
+    precio: number;
+    enStock: boolean;
+    descuento?: number;
+
+    constructor(nombre: string, precio: number, enStock: boolean, descuento?: number) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.enStock = enStock;
+        this.descuento = descuento;
+    }
+}
