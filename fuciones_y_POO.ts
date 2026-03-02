@@ -12,3 +12,5 @@ function obtenerPrecioFinal(producto: Producto): number {
     if (producto.descuento) {
         return producto.precio - producto.descuento;
     }
+    return producto.precio;
+}
