@@ -29,3 +29,6 @@ class Producto {
         this.descuento = descuento;
     }
 }
+
+//Herencia
+class ProductoElectronico extends Producto {
