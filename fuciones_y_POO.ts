@@ -17,3 +17,4 @@ function obtenerPrecioFinal(producto: Producto): number {
 
 //Clases
 class Producto {
+    nombre: string;
