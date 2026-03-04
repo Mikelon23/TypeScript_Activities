@@ -22,3 +22,9 @@ function saludarCliente(nombre: string) {
     console.log("¡Hola, " + nombre + "!");
 }
 
+//En programación, void significa literalmente "vacío".
+function mostrarAlerta(mensaje: string): void {
+    console.log(mensaje);
+    // Aquí no hay un "return" con valor
+}
+
