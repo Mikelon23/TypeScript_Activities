@@ -18,6 +18,7 @@ function obtenerPrecioFinal(producto: Producto): number {
 /*¿qué pasa con las funciones que simplemente ejecutan 
 una acción y no devuelven nada?
 */
-function mostrarMensaje(mensaje: string): void {
-    console.log(mensaje);
+function saludarCliente(nombre: string) {
+    console.log("¡Hola, " + nombre + "!");
 }
+
