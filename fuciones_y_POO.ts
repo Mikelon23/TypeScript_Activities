@@ -28,3 +28,6 @@ function mostrarAlerta(mensaje: string): void {
     // Aquí no hay un "return" con valor
 }
 
+//El poder de los Genéricos (Generics)
+function obtenerPrimero(lista: any[]): any
+
