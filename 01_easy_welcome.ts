@@ -34,3 +34,10 @@ export const welcomeUser = (user: UserProfile): string => {
     return `Hola ${name}. ${roleMessages[role]}`;
 };
 
+// Ejemplo de uso:
+const miguel: UserProfile = {
+    name: 'Miguel',
+    role: UserRole.ADMIN,
+};
+
+
