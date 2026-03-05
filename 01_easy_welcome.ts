@@ -12,4 +12,14 @@ enum UserRole {
     GUEST = 'GUEST',
 }
 
+interface UserProfile {
+    name: string;
+    role: UserRole;
+    lastLogin?: Date;
+}
+
+/**
+ * Genera un mensaje de bienvenida basado en el rol del usuario.
+ * Sigue el principio de Responsabilidad Única (SRP).
+ */
 
