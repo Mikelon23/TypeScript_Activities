@@ -22,4 +22,15 @@ interface UserProfile {
  * Genera un mensaje de bienvenida basado en el rol del usuario.
  * Sigue el principio de Responsabilidad Única (SRP).
  */
+export const welcomeUser = (user: UserProfile): string => {
+    const { name, role } = user;
+
+    const roleMessages: Record<UserRole, string> = {
+        [UserRole.ADMIN]: 'Bienvenido, administrador. Tienes acceso total al panel.',
+        [UserRole.EDITOR]: 'Hola editor, tienes cambios pendientes por revisar.',
+        [UserRole.GUEST]: 'Bienvenido invitado, ¡esperamos que disfrutes el contenido!',
+    };
+
+    return `Hola ${name}. ${roleMessages[role]}`;
+};
 
