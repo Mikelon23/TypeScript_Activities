@@ -40,4 +40,4 @@ const miguel: UserProfile = {
     role: UserRole.ADMIN,
 };
 
-
+console.log(welcomeUser(miguel));
