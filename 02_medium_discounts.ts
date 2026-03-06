@@ -53,3 +53,17 @@ class ShoppingCart {
         this.products.push(product);
     }
 
+    setDiscountStrategy(strategy: DiscountStrategy): void {
+        this.discountStrategy = strategy;
+    }
+
+    getRawTotal(): number {
+        return this.products.reduce((acc, prod) => acc + prod.price, 0);
+    }
+
+    getFinalTotal(): number {
+        const rawTotal = this.getRawTotal();
+        return this.discountStrategy.calculate(rawTotal);
+    }
+}
+
