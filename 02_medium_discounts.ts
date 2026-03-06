@@ -26,3 +26,15 @@ class NoDiscount implements DiscountStrategy {
     }
 }
 
+class MemberDiscount implements DiscountStrategy {
+    calculate(total: number): number {
+        return total * 0.9; // 10% de descuento
+    }
+}
+
+class VipDiscount implements DiscountStrategy {
+    calculate(total: number): number {
+        return total * 0.8; // 20% de descuento
+    }
+}
+
