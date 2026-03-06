@@ -38,3 +38,18 @@ class VipDiscount implements DiscountStrategy {
     }
 }
 
+/**
+ * Clase Carrito que delega el cálculo del total a una estrategia.
+ */
+class ShoppingCart {
+    private products: Product[] = [];
+    private discountStrategy: DiscountStrategy;
+
+    constructor(strategy: DiscountStrategy = new NoDiscount()) {
+        this.discountStrategy = strategy;
+    }
+
+    addProduct(product: Product): void {
+        this.products.push(product);
+    }
+
