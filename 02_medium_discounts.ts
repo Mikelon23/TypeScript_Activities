@@ -67,3 +67,7 @@ class ShoppingCart {
     }
 }
 
+// Ejemplo de uso:
+const cart = new ShoppingCart(new VipDiscount());
+cart.addProduct({ id: '1', name: 'Laptop', price: 1000 });
+cart.addProduct({ id: '2', name: 'Mouse', price: 50 });
