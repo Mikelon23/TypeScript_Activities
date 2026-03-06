@@ -71,3 +71,6 @@ class ShoppingCart {
 const cart = new ShoppingCart(new VipDiscount());
 cart.addProduct({ id: '1', name: 'Laptop', price: 1000 });
 cart.addProduct({ id: '2', name: 'Mouse', price: 50 });
+
+console.log(`Total Bruto: $${cart.getRawTotal()}`);
+console.log(`Total con Descuento VIP: $${cart.getFinalTotal()}`);
