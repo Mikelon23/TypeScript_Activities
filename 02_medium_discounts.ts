@@ -12,3 +12,17 @@ interface Product {
     price: number;
 }
 
+/**
+ * Interfaz para definir la estrategia de descuento.
+ */
+interface DiscountStrategy {
+    calculate(total: number): number;
+}
+
+// Estrategias concretas
+class NoDiscount implements DiscountStrategy {
+    calculate(total: number): number {
+        return total;
+    }
+}
+
