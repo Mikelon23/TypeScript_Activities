@@ -44,3 +44,10 @@ class TypedEventBus {
         await Promise.all(promises);
     }
 
+    /**
+     * Elimina todos los suscriptores de un evento.
+     */
+    off<T extends EventName>(event: T): void {
+        delete this.listeners[event];
+    }
+}
