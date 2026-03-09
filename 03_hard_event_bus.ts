@@ -51,3 +51,12 @@ class TypedEventBus {
         delete this.listeners[event];
     }
 }
+
+// Ejemplo de uso con validación de tipos en tiempo de compilación:
+const bus = new TypedEventBus();
+
+// TypeScript inferirá automáticamente que 'data' debe tener 'userId' y 'timestamp'
+bus.on('user:login', (data) => {
+    console.log(`[LOG] Usuario ${data.userId} entró a las ${new Date(data.timestamp).toLocaleTimeString()}`);
+});
+
