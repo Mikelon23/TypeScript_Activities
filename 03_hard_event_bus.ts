@@ -31,3 +31,16 @@ class TypedEventBus {
         }
         this.listeners[event]?.push(handler);
     }
+
+    /**
+     * Emite un evento asegurando que los datos coincidan con la interfaz AppEvents.
+     */
+    async emit<T extends EventName>(event: T, data: AppEvents[T]): Promise<void> {
+        const handlers = this.listeners[event];
+        if (!handlers) return;
+
+        // Ejecuta todos los handlers de forma segura
+        const promises = handlers.map(handler => Promise.resolve(handler(data)));
+        await Promise.all(promises);
+    }
+
