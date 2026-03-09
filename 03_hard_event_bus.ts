@@ -19,3 +19,15 @@ interface AppEvents {
 type EventName = keyof AppEvents;
 type Handler<T extends EventName> = (data: AppEvents[T]) => void | Promise<void>;
 
+class TypedEventBus {
+    private listeners: Partial<{ [K in EventName]: Handler<K>[] }> = {};
+
+    /**
+     * Se suscribe a un evento con tipado estricto.
+     */
+    on<T extends EventName>(event: T, handler: Handler<T>): void {
+        if (!this.listeners[event]) {
+            this.listeners[event] = [];
+        }
+        this.listeners[event]?.push(handler);
+    }
