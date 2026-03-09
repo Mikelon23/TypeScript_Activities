@@ -60,3 +60,8 @@ bus.on('user:login', (data) => {
     console.log(`[LOG] Usuario ${data.userId} entró a las ${new Date(data.timestamp).toLocaleTimeString()}`);
 });
 
+// Esto dará error si descomentas:
+// bus.emit('user:login', { name: 'Error' }); 
+
+bus.emit('user:login', { userId: 'user_123', timestamp: Date.now() });
+bus.emit('product:added', { productId: 'p_99', quantity: 2 });
