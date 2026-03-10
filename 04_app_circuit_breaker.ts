@@ -35,3 +35,14 @@ class CircuitBreaker<T, Args extends any[]> {
         throw new Error("🔴 Circuito Abierto: Petición bloqueada para proteger el sistema.");
       }
     }
+
+    try {
+      const result = await this.requestFn(...args);
+      this.onSuccess();
+      return result;
+    } catch (error) {
+      this.onFailure();
+      throw error;
+    }
+  }
+
