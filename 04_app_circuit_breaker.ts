@@ -73,3 +73,7 @@ async function mockDatabaseQuery(shouldFail: boolean, id: number): Promise<strin
   return `Datos procesados para el ID ${id}`;
 }
 
+async function runCircuitBreakerDemo() {
+  console.log("--- Iniciando Demo: Circuit Breaker ---");
+  const secureQuery = new CircuitBreaker(mockDatabaseQuery, 2, 3000); // Falla al 2do intento, espera 3s
+
