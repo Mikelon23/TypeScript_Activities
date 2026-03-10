@@ -77,3 +77,10 @@ async function runCircuitBreakerDemo() {
   console.log("--- Iniciando Demo: Circuit Breaker ---");
   const secureQuery = new CircuitBreaker(mockDatabaseQuery, 2, 3000); // Falla al 2do intento, espera 3s
 
+  try { await secureQuery.fire(false, 1); console.log("Éxito en query 1"); } catch (e: any) { console.error(e.message); }
+  try { await secureQuery.fire(true, 2); console.log("Éxito en query 2"); } catch (e: any) { console.error(e.message); }
+  try { await secureQuery.fire(true, 3); console.log("Éxito en query 3"); } catch (e: any) { console.error(e.message); }
+
+  // Aquí el circuito debería estar abierto (ya falló 2 veces)
+  try { await secureQuery.fire(false, 4); } catch (e: any) { console.error(e.message); }
+
