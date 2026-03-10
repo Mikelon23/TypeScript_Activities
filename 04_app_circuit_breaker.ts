@@ -46,3 +46,11 @@ class CircuitBreaker<T, Args extends any[]> {
     }
   }
 
+  private onSuccess() {
+    this.failureCount = 0;
+    if (this.state === CircuitState.HALF_OPEN) {
+      console.log("🟢 Circuito Cerrado: API recuperada. Flujo restablecido.");
+    }
+    this.state = CircuitState.CLOSED;
+  }
+
