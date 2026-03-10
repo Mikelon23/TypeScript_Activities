@@ -54,3 +54,13 @@ class CircuitBreaker<T, Args extends any[]> {
     this.state = CircuitState.CLOSED;
   }
 
+  private onFailure() {
+    this.failureCount++;
+    if (this.failureCount >= this.failureThreshold) {
+      this.state = CircuitState.OPEN;
+      this.nextAttempt = Date.now() + this.cooldownPeriodMs;
+      console.log(`🔴 Circuito Abierto: Superados ${this.failureThreshold} fallos. Enfriando por ${this.cooldownPeriodMs}ms.`);
+    }
+  }
+}
+
