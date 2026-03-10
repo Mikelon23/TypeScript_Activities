@@ -64,3 +64,12 @@ class CircuitBreaker<T, Args extends any[]> {
   }
 }
 
+// ==============================================
+// DEMOSTRACIÓN DE USO
+// ==============================================
+async function mockDatabaseQuery(shouldFail: boolean, id: number): Promise<string> {
+  await new Promise(res => setTimeout(res, 100)); // Simulando latencia
+  if (shouldFail) throw new Error("Timeout de base de datos");
+  return `Datos procesados para el ID ${id}`;
+}
+
