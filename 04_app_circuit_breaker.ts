@@ -84,3 +84,11 @@ async function runCircuitBreakerDemo() {
   // Aquí el circuito debería estar abierto (ya falló 2 veces)
   try { await secureQuery.fire(false, 4); } catch (e: any) { console.error(e.message); }
 
+  console.log("Esperando 3.5 segundos para que el circuito se reactive...");
+  await new Promise(res => setTimeout(res, 3500));
+
+  // Circuito "Half-Open", el siguiente intento funcionará y lo cerrará (Closed)
+  try { await secureQuery.fire(false, 5); console.log("Éxito en query 5 (Recuperación)"); } catch (e: any) { console.error(e.message); }
+}
+
+runCircuitBreakerDemo();
