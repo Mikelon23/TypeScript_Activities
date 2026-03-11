@@ -25,3 +25,11 @@ class StringValidator extends Validator<string> {
   }
 }
 
+// Validador de Números
+class NumberValidator extends Validator<number> {
+  parse(val: unknown): number {
+    if (typeof val !== 'number' || isNaN(val)) throw new Error(`El valor '${val}' no es un numero valido.`);
+    return val;
+  }
+}
+
