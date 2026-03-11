@@ -42,3 +42,15 @@ class ObjectValidator<Shape extends Record<string, Validator<any>>> extends Vali
       throw new Error(`Se esperaba un objeto, se recibió ${typeof val}`);
     }
 
+    const result: any = {};
+    for (const key in this.shape) {
+      try {
+        result[key] = this.shape[key].parse((val as any)[key]);
+      } catch (err: any) {
+        throw new Error(`[Clave: ${key}] -> ${err.message}`);
+      }
+    }
+    return result;
+  }
+}
+
