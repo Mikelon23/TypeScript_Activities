@@ -33,3 +33,12 @@ class NumberValidator extends Validator<number> {
   }
 }
 
+// Validador de Objetos completo (Recursivo)
+class ObjectValidator<Shape extends Record<string, Validator<any>>> extends Validator<{ [K in keyof Shape]: Infer<Shape[K]> }> {
+  constructor(private readonly shape: Shape) { super(); }
+
+  parse(val: unknown): { [K in keyof Shape]: Infer<Shape[K]> } {
+    if (typeof val !== 'object' || val === null || Array.isArray(val)) {
+      throw new Error(`Se esperaba un objeto, se recibió ${typeof val}`);
+    }
+
