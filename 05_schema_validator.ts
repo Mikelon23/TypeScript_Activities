@@ -17,3 +17,11 @@ abstract class Validator<T> {
   abstract parse(val: unknown): T;
 }
 
+// Validador de Strings
+class StringValidator extends Validator<string> {
+  parse(val: unknown): string {
+    if (typeof val !== 'string') throw new Error(`El valor '${val}' no es un string valido.`);
+    return val;
+  }
+}
+
