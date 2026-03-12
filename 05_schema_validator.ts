@@ -86,3 +86,16 @@ const invalidDataFromApi = {
   preferences: { theme: "dark" }
 };
 
+try {
+  console.log("Parseando datos inválidos...");
+  userSchema.parse(invalidDataFromApi);
+} catch (e: any) {
+  console.error(" Error de validación capturado:", e.message);
+}
+
+const validDataFromApi = {
+  username: "Miguel TS Master",
+  age: 26,
+  preferences: { theme: "dracula" }
+};
+
