@@ -74,3 +74,15 @@ const userSchema = z.object({
   })
 });
 
+// 2. MAGIA SUPERIOR: Infiere el tipo (Interface) en tiempo de desarrollo.
+// Intenta usar 'UserType' y verás que TS sabe la estructura perfecta.
+type UserType = Infer<typeof userSchema>;
+
+console.log("--- Iniciando Demo: Mini-Zod Schema Builder ---");
+
+const invalidDataFromApi = {
+  username: "Miguelon99",
+  age: "veinte", // <- Uh oh, problema aquí
+  preferences: { theme: "dark" }
+};
+
