@@ -99,3 +99,11 @@ const validDataFromApi = {
   preferences: { theme: "dracula" }
 };
 
+try {
+  console.log("\nParseando datos válidos...");
+  const validUser = userSchema.parse(validDataFromApi);
+  console.log(" Datos Validados exitosamente. Es seguro usarlos.");
+  console.log(`Hola, mi nombre es ${validUser.username} y uso el tema ${validUser.preferences.theme}!`);
+} catch (e: any) {
+  console.error(e.message);
+}
