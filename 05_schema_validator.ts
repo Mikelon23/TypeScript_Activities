@@ -54,3 +54,10 @@ class ObjectValidator<Shape extends Record<string, Validator<any>>> extends Vali
   }
 }
 
+// Objeto "z" amigable como builder API
+const z = {
+  string: () => new StringValidator(),
+  number: () => new NumberValidator(),
+  object: <T extends Record<string, Validator<any>>>(shape: T) => new ObjectValidator(shape)
+};
+
