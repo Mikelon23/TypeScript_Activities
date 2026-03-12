@@ -61,3 +61,16 @@ const z = {
   object: <T extends Record<string, Validator<any>>>(shape: T) => new ObjectValidator(shape)
 };
 
+// ==============================================
+//   DEMOSTRACIÓN DE USO
+// ==============================================
+
+// 1. Definimos el Schema a nivel Runtime
+const userSchema = z.object({
+  username: z.string(),
+  age: z.number(),
+  preferences: z.object({
+    theme: z.string()
+  })
+});
+
