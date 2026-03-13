@@ -19,3 +19,12 @@ class LRUCache<K, V> {
   // En TS y JS, 'Map' recuerda el orden de inserción, ¡gran ventaja!
   private cache: Map<K, CacheNode<V>> = new Map();
 
+  /**
+   * @param maxCapacity Cantidad máxima de llaves. Cuando excede, borra la menos usada.
+   * @param defaultTtlMs Tiempo de vida global (en milisegundos). -1 para datos infinitos.
+   */
+  constructor(
+    private maxCapacity: number,
+    private defaultTtlMs: number = -1
+  ) { }
+
