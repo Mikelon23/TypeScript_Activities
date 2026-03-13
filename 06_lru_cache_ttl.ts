@@ -33,4 +33,8 @@ class LRUCache<K, V> {
       // Si la borramos y volvemos a setear, se moverá al FINAL del Map (La hace la "Recién Usada")
       this.cache.delete(key);
     } else if (this.cache.size >= this.maxCapacity) {
-// Sacamos el PRIMER key (el Least Recently Used), porque los sets en JS insertan al final
+      // Sacamos el PRIMER key (el Least Recently Used), porque los sets en JS insertan al final
+      const firstEntryKey = this.cache.keys().next().value;
+      if (firstEntryKey) this.cache.delete(firstEntryKey);
+    }
+
