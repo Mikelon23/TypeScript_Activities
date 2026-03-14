@@ -61,3 +61,12 @@ class LRUCache<K, V> {
     return node.value;
   }
 
+  delete(key: K): void {
+    this.cache.delete(key);
+  }
+
+  get stats() {
+    return { currentSize: this.cache.size, capacity: this.maxCapacity };
+  }
+}
+
