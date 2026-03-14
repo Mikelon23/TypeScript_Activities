@@ -48,3 +48,16 @@ class LRUCache<K, V> {
     const node = this.cache.get(key);
     if (!node) return undefined;
 
+    // Validación TTL
+    if (node.expiry !== null && Date.now() > node.expiry) {
+      this.cache.delete(key);
+      return undefined; // Caducó
+    }
+
+    // Fue accedido! Borramos y re-creamos para setearlo como "Recién Usado" (hasta abajo del Map)
+    this.cache.delete(key);
+    this.cache.set(key, node);
+
+    return node.value;
+  }
+
