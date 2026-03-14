@@ -83,3 +83,9 @@ async function runLRUDemo() {
   cache.set("B", "Métricas User 2");
   cache.set("C", "Métricas User 3");
 
+  // Al acceder a 'A', la convertimos en la cache 'más reciente', moviéndola lejos de ser borrada.
+  console.log("Obteniendo A (Refresco LRU):", cache.get("A"));
+
+  // Como el límite es 3. Al meter 'D', la llave 'B' debe morir por ser la Least Recently Used ahora.
+  cache.set("D", "Métricas User 4");
+
