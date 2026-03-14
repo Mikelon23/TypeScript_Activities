@@ -38,3 +38,13 @@ class LRUCache<K, V> {
       if (firstEntryKey) this.cache.delete(firstEntryKey);
     }
 
+    const ttlToUse = customTtl !== undefined ? customTtl : this.defaultTtlMs;
+    const expiry = ttlToUse === -1 ? null : Date.now() + ttlToUse;
+
+    this.cache.set(key, { value, expiry });
+  }
+
+  get(key: K): V | undefined {
+    const node = this.cache.get(key);
+    if (!node) return undefined;
+
