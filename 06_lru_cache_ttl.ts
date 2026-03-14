@@ -70,3 +70,16 @@ class LRUCache<K, V> {
   }
 }
 
+// ==============================================
+//  DEMOSTRACIÓN DE USO
+// ==============================================
+
+async function runLRUDemo() {
+  console.log("--- Iniciando Demo: LRU Cache con TTL ---");
+  const cache = new LRUCache<string, string>(3, 5000); // 3 items máx, 5 seg de vida base.
+
+  console.log("Añadiendo datos...");
+  cache.set("A", "Métricas User 1");
+  cache.set("B", "Métricas User 2");
+  cache.set("C", "Métricas User 3");
+
