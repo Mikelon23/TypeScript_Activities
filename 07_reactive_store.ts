@@ -31,3 +31,10 @@ class ReactiveStore<T extends object> {
     this.listeners.forEach(cb => cb());
   }
 
+  /**
+   * Crea un Proxy recursivo profundo. Magia de TypeScript pura.
+   */
+  private makeDeepProxy<Obj extends object>(obj: Obj): Obj {
+    return new Proxy(obj, {
+      get: (target: object, property: string | symbol, receiver: any) => {
+        const val = Reflect.get(target, property, receiver);
