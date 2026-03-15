@@ -89,3 +89,9 @@ async function runLRUDemo() {
   // Como el límite es 3. Al meter 'D', la llave 'B' debe morir por ser la Least Recently Used ahora.
   cache.set("D", "Métricas User 4");
 
+  console.log("Buscando B (Debe ser undefined porque fue evictada):", cache.get("B"));
+  console.log("Buscando D (Presente):", cache.get("D"));
+  console.log("Estadísticas Actuales:", cache.stats);
+
+  cache.set("Flash", "Dato Rápido", 1000); // Override TTL a 1 Segundo
+
