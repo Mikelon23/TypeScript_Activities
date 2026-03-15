@@ -95,3 +95,10 @@ async function runLRUDemo() {
 
   cache.set("Flash", "Dato Rápido", 1000); // Override TTL a 1 Segundo
 
+  console.log("\nEsperando 1.2 segundos para que muera Flash...");
+  await new Promise(res => setTimeout(res, 1200));
+
+  console.log("Buscando Dato Flash (Debe caducar):", cache.get("Flash") ?? "CADUCADO");
+}
+
+runLRUDemo();
