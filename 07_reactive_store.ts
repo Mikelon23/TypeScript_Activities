@@ -19,3 +19,9 @@ class ReactiveStore<T extends object> {
     this.reactiveState = this.makeDeepProxy(initialState);
   }
 
+  // Permite suscribir componentes UI a los cambios de la store
+  subscribe(listener: Listener): () => void {
+    this.listeners.add(listener);
+    // Devuelve un "unsubscribe" amigable (React useEffect Cleanup Friendly)
+    return () => this.listeners.delete(listener);
+  }
