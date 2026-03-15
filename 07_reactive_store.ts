@@ -38,3 +38,9 @@ class ReactiveStore<T extends object> {
     return new Proxy(obj, {
       get: (target: object, property: string | symbol, receiver: any) => {
         const val = Reflect.get(target, property, receiver);
+        // Si pedimos una propiedad que resulta ser OTRO objeto interno, enviarle un Proxy recursivo
+        if (typeof val === 'object' && val !== null) {
+          return this.makeDeepProxy(val);
+        }
+        return val;
+      },
