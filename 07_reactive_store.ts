@@ -25,3 +25,9 @@ class ReactiveStore<T extends object> {
     // Devuelve un "unsubscribe" amigable (React useEffect Cleanup Friendly)
     return () => this.listeners.delete(listener);
   }
+
+  // Notificar a todos cuando el estado cambió
+  private emitChange() {
+    this.listeners.forEach(cb => cb());
+  }
+
