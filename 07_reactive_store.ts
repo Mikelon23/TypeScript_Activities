@@ -15,3 +15,7 @@ class ReactiveStore<T extends object> {
   private listeners: Set<Listener> = new Set();
   public reactiveState: T;
 
+  constructor(initialState: T) {
+    this.reactiveState = this.makeDeepProxy(initialState);
+  }
+
