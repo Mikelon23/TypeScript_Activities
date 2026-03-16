@@ -50,3 +50,12 @@ class ReactiveStore<T extends object> {
         // Solo emitimos repintado si el valor realmente es diferente (Optimización de renderizado)
         if (oldValue !== newValue) {
           console.log(`[Store Tracker] Modificado: ${String(property)} => de ${oldValue} a ${newValue}`);
+          Reflect.set(target, property, newValue, receiver);
+          this.emitChange();
+        }
+        return true;
+      }
+    });
+  }
+} // => Fin de la micro-librería Reactiva.
+
