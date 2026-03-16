@@ -44,3 +44,9 @@ class ReactiveStore<T extends object> {
         }
         return val;
       },
+      set: (target: object, property: string | symbol, newValue: any, receiver: any) => {
+        const oldValue = Reflect.get(target, property, receiver);
+
+        // Solo emitimos repintado si el valor realmente es diferente (Optimización de renderizado)
+        if (oldValue !== newValue) {
+          console.log(`[Store Tracker] Modificado: ${String(property)} => de ${oldValue} a ${newValue}`);
