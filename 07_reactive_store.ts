@@ -68,3 +68,10 @@ interface MiAplicacion {
   config: { tema: "dark" | "light"; notificaciones: boolean };
 }
 
+const store = new ReactiveStore<MiAplicacion>({
+  usuario: { nombre: "Miguel", nivel: 10 },
+  config: { tema: "dark", notificaciones: true }
+});
+
+console.log("--- Iniciando Demo: Reactive Store ---");
+
