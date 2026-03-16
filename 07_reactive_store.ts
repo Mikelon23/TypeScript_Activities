@@ -59,3 +59,12 @@ class ReactiveStore<T extends object> {
   }
 } // => Fin de la micro-librería Reactiva.
 
+// ==============================================
+//  DEMOSTRACIÓN DE USO
+// ==============================================
+
+interface MiAplicacion {
+  usuario: { nombre: string; nivel: number };
+  config: { tema: "dark" | "light"; notificaciones: boolean };
+}
+
