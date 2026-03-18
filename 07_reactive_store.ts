@@ -82,3 +82,9 @@ store.subscribe(() => {
 
 // Este no debe disparar render porque el estado no cambia
 store.reactiveState.config.tema = "dark";
+
+// Cambio profundo (Aviso: Activa el Setter recursivo)
+store.reactiveState.usuario.nivel = 99;
+
+// Cambio de otra propiedad (Activa el Proxy)
+store.reactiveState.config.notificaciones = false;
