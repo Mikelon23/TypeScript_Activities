@@ -25,3 +25,14 @@ export class AsyncTaskScheduler {
 
   constructor(private readonly maxConcurrency: number) { }
 
+  /**
+   * Encola una tarea. Devuelve una promesa conectada al final de la ejecución individual de ese subproceso.
+   */
+  public enqueue<T>(task: Task<T>, priority: number = 0): Promise<T> {
+    const id = Math.random().toString(36).substring(7);
+
+    return new Promise<T>((resolve, reject) => {
+      this.queue.push({
+        id, execute: task, resolve, reject, priority
+      });
+
