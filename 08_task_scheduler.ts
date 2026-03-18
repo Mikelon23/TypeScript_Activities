@@ -18,3 +18,10 @@ interface QueueItem {
   reject: (reason?: any) => void;
   priority: number;
 }
+
+export class AsyncTaskScheduler {
+  private queue: QueueItem[] = [];
+  private activeWorkers: number = 0;
+
+  constructor(private readonly maxConcurrency: number) { }
+
