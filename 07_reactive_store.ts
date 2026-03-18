@@ -75,3 +75,10 @@ const store = new ReactiveStore<MiAplicacion>({
 
 console.log("--- Iniciando Demo: Reactive Store ---");
 
+// Simulamos que el framework Frontend (ej. React) se inscribe
+store.subscribe(() => {
+  console.log("🟢 UI RENDERIZADO: ¡El Estado Global acaba de cambiar!\n");
+});
+
+// Este no debe disparar render porque el estado no cambia
+store.reactiveState.config.tema = "dark";
