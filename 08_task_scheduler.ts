@@ -42,3 +42,8 @@ export class AsyncTaskScheduler {
       this.processNext();
     });
   }
+
+  private async processNext() {
+    // Si llegamos al límite de operaciones simultáneas, no hacemos nada
+    if (this.activeWorkers >= this.maxConcurrency || this.queue.length === 0) return;
+
