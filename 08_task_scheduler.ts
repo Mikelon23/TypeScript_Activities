@@ -36,3 +36,9 @@ export class AsyncTaskScheduler {
         id, execute: task, resolve, reject, priority
       });
 
+      // Ordenar por prioridad antes de iterar (PriorityQueue sencilla)
+      this.queue.sort((a, b) => b.priority - a.priority);
+
+      this.processNext();
+    });
+  }
