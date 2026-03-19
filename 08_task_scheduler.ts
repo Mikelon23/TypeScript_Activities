@@ -47,3 +47,10 @@ export class AsyncTaskScheduler {
     // Si llegamos al límite de operaciones simultáneas, no hacemos nada
     if (this.activeWorkers >= this.maxConcurrency || this.queue.length === 0) return;
 
+    // Tomamos la operación más importante en la cola
+    const item = this.queue.shift();
+    if (!item) return;
+
+    this.activeWorkers++;
+    console.log(`[Worker Ocupado] -> Arrancando Tarea [${item.id}]. Concurrencia actual: ${this.activeWorkers}/${this.maxConcurrency}`);
+
