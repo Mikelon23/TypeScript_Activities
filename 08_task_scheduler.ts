@@ -59,3 +59,12 @@ export class AsyncTaskScheduler {
       const result = await item.execute();
       item.resolve(result); // Le avisamos a quien llamó "enqueue()" que su subproceso terminó.
     } catch (err) {
+      item.reject(err);
+    } finally {
+      this.activeWorkers--;
+      // Como liberamos un hilo, tratamos de jalar la siguiente tarea recursivamente.
+      this.processNext();
+    }
+  }
+}
+
