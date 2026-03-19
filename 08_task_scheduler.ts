@@ -54,3 +54,8 @@ export class AsyncTaskScheduler {
     this.activeWorkers++;
     console.log(`[Worker Ocupado] -> Arrancando Tarea [${item.id}]. Concurrencia actual: ${this.activeWorkers}/${this.maxConcurrency}`);
 
+    try {
+      // Ejecutamos la promesa. (await no bloqueante para el resto de enqueues)
+      const result = await item.execute();
+      item.resolve(result); // Le avisamos a quien llamó "enqueue()" que su subproceso terminó.
+    } catch (err) {
