@@ -75,3 +75,8 @@ export class AsyncTaskScheduler {
 // Función dummy para simular descargas o procesamientos con demoras variables
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
+async function runSchedulerDemo() {
+  console.log("--- Iniciando Demo: Limitador de Concurrencia ---");
+  // Limitado para solo realizar 2 tareas a la misma vez
+  const scheduler = new AsyncTaskScheduler(2);
+
