@@ -22,3 +22,8 @@ interface Subject<T> {
   notify(event: string, payload: T): void;
 }
 
+// ── Implementación ──────────────────────────────────────────────────────────────
+
+class EventBus<T> implements Subject<T> {
+  private listeners: Map<string, Set<Observer<T>>> = new Map();
+
