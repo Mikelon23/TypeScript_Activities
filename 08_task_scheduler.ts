@@ -86,3 +86,13 @@ async function runSchedulerDemo() {
   const t3 = scheduler.enqueue(async () => { await delay(500); return "Tarea 3 (URGENTE) Lista"; }, 99);
   const t4 = scheduler.enqueue(async () => { await delay(800); return "Tarea 4 Lista"; }, 1);
 
+  // La magia: t1 y t2 arrancan porque hay 2 hilos libres.
+  // PERO, la Tarea 3 fue lanzada después y tiene PRIORIDAD 99. 
+  // En lo que t2 termine, el scheduler seleccionará t3 inmediatamente por encima de la t4.
+
+  const result = await Promise.all([t1, t2, t3, t4]);
+  console.log(" Todas las tareas finalizadas correctamente!");
+  console.log("Resultados:", result);
+}
+
+runSchedulerDemo();
