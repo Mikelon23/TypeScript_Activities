@@ -27,3 +27,9 @@ interface Subject<T> {
 class EventBus<T> implements Subject<T> {
   private listeners: Map<string, Set<Observer<T>>> = new Map();
 
+  subscribe(event: string, observer: Observer<T>): void {
+    if (!this.listeners.has(event)) this.listeners.set(event, new Set());
+    this.listeners.get(event)!.add(observer);
+    console.log(`📻 [${observer.constructor.name}] se suscribió al evento "${event}"`);
+  }
+
