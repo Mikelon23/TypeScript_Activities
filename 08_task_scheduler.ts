@@ -68,3 +68,10 @@ export class AsyncTaskScheduler {
   }
 }
 
+// ==============================================
+//  DEMOSTRACIÓN DE USO
+// ==============================================
+
+// Función dummy para simular descargas o procesamientos con demoras variables
+const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+
