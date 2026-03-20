@@ -16,3 +16,9 @@ interface Observer<T> {
   update(event: string, payload: T): void;
 }
 
+interface Subject<T> {
+  subscribe(event: string, observer: Observer<T>): void;
+  unsubscribe(event: string, observer: Observer<T>): void;
+  notify(event: string, payload: T): void;
+}
+
