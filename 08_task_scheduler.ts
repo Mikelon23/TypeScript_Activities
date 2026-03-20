@@ -80,3 +80,6 @@ async function runSchedulerDemo() {
   // Limitado para solo realizar 2 tareas a la misma vez
   const scheduler = new AsyncTaskScheduler(2);
 
+  // Configuramos tareas
+  const t1 = scheduler.enqueue(async () => { await delay(2000); return "Tarea 1 Lista"; }, 1);
+  const t2 = scheduler.enqueue(async () => { await delay(1000); return "Tarea 2 Lista"; }, 1);
