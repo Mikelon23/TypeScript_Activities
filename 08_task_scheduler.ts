@@ -83,3 +83,6 @@ async function runSchedulerDemo() {
   // Configuramos tareas
   const t1 = scheduler.enqueue(async () => { await delay(2000); return "Tarea 1 Lista"; }, 1);
   const t2 = scheduler.enqueue(async () => { await delay(1000); return "Tarea 2 Lista"; }, 1);
+  const t3 = scheduler.enqueue(async () => { await delay(500); return "Tarea 3 (URGENTE) Lista"; }, 99);
+  const t4 = scheduler.enqueue(async () => { await delay(800); return "Tarea 4 Lista"; }, 1);
+
