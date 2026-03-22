@@ -33,3 +33,8 @@ class EventBus<T> implements Subject<T> {
     console.log(`📻 [${observer.constructor.name}] se suscribió al evento "${event}"`);
   }
 
+  unsubscribe(event: string, observer: Observer<T>): void {
+    this.listeners.get(event)?.delete(observer);
+    console.log(` [${observer.constructor.name}] se desuscribió del evento "${event}"`);
+  }
+
