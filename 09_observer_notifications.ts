@@ -56,3 +56,11 @@ interface ChatMessage {
   channel: string;
 }
 
+// ── Observadores Concretos ─────────────────────────────────────────────────────
+
+class UINotifier implements Observer<ChatMessage> {
+  update(_event: string, { from, text, channel }: ChatMessage): void {
+    console.log(`    [UI]    Mostrando mensaje en #${channel}: "${text}" — de ${from}`);
+  }
+}
+
