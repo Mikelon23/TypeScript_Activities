@@ -38,3 +38,13 @@ class EventBus<T> implements Subject<T> {
     console.log(` [${observer.constructor.name}] se desuscribió del evento "${event}"`);
   }
 
+  notify(event: string, payload: T): void {
+    const subs = this.listeners.get(event);
+    if (!subs || subs.size === 0) {
+      console.log(`  Nadie escucha el evento "${event}"`);
+      return;
+    }
+    subs.forEach(obs => obs.update(event, payload));
+  }
+}
+
