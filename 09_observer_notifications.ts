@@ -48,3 +48,11 @@ class EventBus<T> implements Subject<T> {
   }
 }
 
+// ── Tipos de mensajes ──────────────────────────────────────────────────────────
+
+interface ChatMessage {
+  from: string;
+  text: string;
+  channel: string;
+}
+
