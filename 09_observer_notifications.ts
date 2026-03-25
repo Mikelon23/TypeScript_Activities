@@ -111,3 +111,6 @@ function runObserverDemo() {
   console.log("\n Llega un mensaje de Ana:");
   bus.notify("message", { from: "Ana", text: "Buenos días ", channel: "general" });
 
+  console.log("\n Mensaje en #dev:");
+  bus.notify("message", { from: "Bot", text: "Build exitoso ", channel: "dev" });
+
