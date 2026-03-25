@@ -100,3 +100,8 @@ function runObserverDemo() {
   const badge = new BadgeCounter();
   const db = new DatabaseLogger();
 
+  bus.subscribe("message", ui);
+  bus.subscribe("message", sound);
+  bus.subscribe("message", badge);
+  bus.subscribe("message", db);
+
