@@ -117,3 +117,7 @@ function runObserverDemo() {
   console.log("\n SoundPlayer se desuscribe...");
   bus.unsubscribe("message", sound);
 
+  console.log("\n Siguiente mensaje (sin sonido):");
+  bus.notify("message", { from: "Miguel", text: "¿Alguien para PR review?", channel: "dev" });
+}
+
