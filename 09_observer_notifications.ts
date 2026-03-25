@@ -82,3 +82,9 @@ class BadgeCounter implements Observer<ChatMessage> {
 class DatabaseLogger implements Observer<ChatMessage> {
   private log: ChatMessage[] = [];
 
+  update(_event: string, msg: ChatMessage): void {
+    this.log.push(msg);
+    console.log(`  [DB]     Guardado en base de datos. Total registros: ${this.log.length}`);
+  }
+}
+
