@@ -121,3 +121,4 @@ function runObserverDemo() {
   bus.notify("message", { from: "Miguel", text: "¿Alguien para PR review?", channel: "dev" });
 }
 
+runObserverDemo();
