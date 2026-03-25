@@ -88,3 +88,10 @@ class DatabaseLogger implements Observer<ChatMessage> {
   }
 }
 
+// ── Demo ────────────────────────────────────────────────────────────────────────
+
+function runObserverDemo() {
+  console.log("--- Iniciando Demo: Observer — Sistema de Notificaciones ---\n");
+
+  const bus = new EventBus<ChatMessage>();
+
