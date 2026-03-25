@@ -73,3 +73,9 @@ class SoundPlayer implements Observer<ChatMessage> {
 class BadgeCounter implements Observer<ChatMessage> {
   private counts: Map<string, number> = new Map();
 
+  update(_event: string, { channel }: ChatMessage): void {
+    this.counts.set(channel, (this.counts.get(channel) ?? 0) + 1);
+    console.log(`  [Badge]  ${this.counts.get(channel)} mensaje(s) sin leer en #${channel}`);
+  }
+}
+
