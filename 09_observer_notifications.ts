@@ -64,3 +64,9 @@ class UINotifier implements Observer<ChatMessage> {
   }
 }
 
+class SoundPlayer implements Observer<ChatMessage> {
+  update(_event: string, { channel }: ChatMessage): void {
+    console.log(`  [Audio]  *ding* — Nuevo mensaje en #${channel}`);
+  }
+}
+
