@@ -19,3 +19,8 @@ interface CartItem {
   quantity: number;
 }
 
+interface PricingStrategy {
+  readonly name: string;
+  apply(items: CartItem[]): number; // Retorna el monto de descuento
+}
+
