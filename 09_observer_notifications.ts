@@ -95,3 +95,8 @@ function runObserverDemo() {
 
   const bus = new EventBus<ChatMessage>();
 
+  const ui = new UINotifier();
+  const sound = new SoundPlayer();
+  const badge = new BadgeCounter();
+  const db = new DatabaseLogger();
+
