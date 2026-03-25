@@ -70,3 +70,6 @@ class SoundPlayer implements Observer<ChatMessage> {
   }
 }
 
+class BadgeCounter implements Observer<ChatMessage> {
+  private counts: Map<string, number> = new Map();
+
