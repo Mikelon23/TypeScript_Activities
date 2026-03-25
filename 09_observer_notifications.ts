@@ -105,3 +105,9 @@ function runObserverDemo() {
   bus.subscribe("message", badge);
   bus.subscribe("message", db);
 
+  console.log("\n Llega un mensaje de Miguel:");
+  bus.notify("message", { from: "Miguel", text: "¡Hola equipo!", channel: "general" });
+
+  console.log("\n Llega un mensaje de Ana:");
+  bus.notify("message", { from: "Ana", text: "Buenos días ", channel: "general" });
+
