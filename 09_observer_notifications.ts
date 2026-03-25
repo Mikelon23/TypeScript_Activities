@@ -114,3 +114,6 @@ function runObserverDemo() {
   console.log("\n Mensaje en #dev:");
   bus.notify("message", { from: "Bot", text: "Build exitoso ", channel: "dev" });
 
+  console.log("\n SoundPlayer se desuscribe...");
+  bus.unsubscribe("message", sound);
+
