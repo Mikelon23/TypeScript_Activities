@@ -79,3 +79,6 @@ class BadgeCounter implements Observer<ChatMessage> {
   }
 }
 
+class DatabaseLogger implements Observer<ChatMessage> {
+  private log: ChatMessage[] = [];
+
