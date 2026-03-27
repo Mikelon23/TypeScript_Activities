@@ -63,3 +63,7 @@ class FixedCoupon implements PricingStrategy {
   readonly name: string;
   private used = false;
 
+  constructor(private readonly code: string, private readonly amount: number) {
+    this.name = `Cupón "${code}" ($${amount} off)`;
+  }
+
