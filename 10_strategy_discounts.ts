@@ -44,3 +44,7 @@ class PercentageDiscount implements PricingStrategy {
 class BulkDiscount implements PricingStrategy {
   readonly name: string;
 
+  constructor(private readonly minQty: number, private readonly percent: number) {
+    this.name = `Descuento volumen (≥${minQty} unidades → ${percent}% off)`;
+  }
+
