@@ -67,3 +67,9 @@ class FixedCoupon implements PricingStrategy {
     this.name = `Cupón "${code}" ($${amount} off)`;
   }
 
+  apply(items: CartItem[]): number {
+    const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0);
+    if (this.used) {
+      console.log(`  El cupón "${this.code}" ya fue utilizado.`);
+      return 0;
+    }
