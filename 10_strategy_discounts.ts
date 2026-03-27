@@ -73,3 +73,12 @@ class FixedCoupon implements PricingStrategy {
       console.log(`  El cupón "${this.code}" ya fue utilizado.`);
       return 0;
     }
+    if (subtotal < this.amount) {
+      console.log(`  Subtotal insuficiente para aplicar el cupón.`);
+      return 0;
+    }
+    this.used = true;
+    return this.amount;
+  }
+}
+
