@@ -24,3 +24,13 @@ interface PricingStrategy {
   apply(items: CartItem[]): number; // Retorna el monto de descuento
 }
 
+// ── Estrategias de Descuento Concretas ─────────────────────────────────────────
+
+/** Descuento porcentual simple: ej. 20% off **/
+class PercentageDiscount implements PricingStrategy {
+  readonly name: string;
+
+  constructor(private readonly percent: number) {
+    this.name = `Descuento ${percent}%`;
+  }
+
