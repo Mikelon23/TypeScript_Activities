@@ -58,3 +58,8 @@ class BulkDiscount implements PricingStrategy {
   }
 }
 
+/** Cupón de descuento fijo: ej. $50 off */
+class FixedCoupon implements PricingStrategy {
+  readonly name: string;
+  private used = false;
+
