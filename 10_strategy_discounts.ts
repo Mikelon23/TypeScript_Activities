@@ -34,3 +34,9 @@ class PercentageDiscount implements PricingStrategy {
     this.name = `Descuento ${percent}%`;
   }
 
+  apply(items: CartItem[]): number {
+    const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+    return subtotal * (this.percent / 100);
+  }
+}
+
