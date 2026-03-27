@@ -26,7 +26,7 @@ interface PricingStrategy {
 
 // ── Estrategias de Descuento Concretas ─────────────────────────────────────────
 
-/** Descuento porcentual simple: ej. 20% off **/
+/** Descuento porcentual simple: ej. 20% off */
 class PercentageDiscount implements PricingStrategy {
   readonly name: string;
 
@@ -47,4 +47,14 @@ class BulkDiscount implements PricingStrategy {
   constructor(private readonly minQty: number, private readonly percent: number) {
     this.name = `Descuento volumen (≥${minQty} unidades → ${percent}% off)`;
   }
+
+  apply(items: CartItem[]): number {
+    return items.reduce((disc, item) => {
+      if (item.quantity >= this.minQty) {
+        disc += item.price * item.quantity * (this.percent / 100);
+      }
+      return disc;
+    }, 0);
+  }
+}
 
