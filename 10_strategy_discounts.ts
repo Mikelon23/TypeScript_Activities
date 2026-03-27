@@ -40,3 +40,7 @@ class PercentageDiscount implements PricingStrategy {
   }
 }
 
+/** Descuento por volumen: X unidades → Y% de descuento */
+class BulkDiscount implements PricingStrategy {
+  readonly name: string;
+
