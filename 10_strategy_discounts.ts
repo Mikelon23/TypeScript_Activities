@@ -140,3 +140,6 @@ eCommerceCart
   .addItem({ name: "Teclado Mecánico", price: 90, quantity: 2 });
 
 console.log("\n Escenario 1: Black Friday (25% todo)");
+eCommerceCart.setDiscountStrategy(new PercentageDiscount(25)).checkout();
+
+console.log("\n Escenario 2: Descuento por volumen (≥3 unidades → 15% off)");
