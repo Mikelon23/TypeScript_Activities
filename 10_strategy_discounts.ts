@@ -143,3 +143,9 @@ console.log("\n Escenario 1: Black Friday (25% todo)");
 eCommerceCart.setDiscountStrategy(new PercentageDiscount(25)).checkout();
 
 console.log("\n Escenario 2: Descuento por volumen (≥3 unidades → 15% off)");
+eCommerceCart.setDiscountStrategy(new BulkDiscount(3, 15)).checkout();
+
+console.log("\n Escenario 3: Cupón VIP$100");
+eCommerceCart.setDiscountStrategy(new FixedCoupon("VIP100", 100)).checkout();
+
+console.log("\n Escenario 4: Elegir el mejor descuento automáticamente");
