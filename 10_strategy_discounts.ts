@@ -107,3 +107,9 @@ class ECommerceCart {
     return this;
   }
 
+  setDiscountStrategy(strategy: PricingStrategy): this {
+    this.strategy = strategy;
+    console.log(`  Estrategia aplicada: "${strategy.name}"`);
+    return this;
+  }
+
