@@ -129,3 +129,9 @@ class ECommerceCart {
   }
 }
 
+// ── Demo ────────────────────────────────────────────────────────────────────────
+
+console.log("--- Iniciando Demo: Strategy — Motor de Descuentos ---\n");
+
+const eCommerceCart = new ECommerceCart();
+eCommerceCart
