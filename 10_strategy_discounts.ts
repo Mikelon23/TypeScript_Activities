@@ -135,3 +135,8 @@ console.log("--- Iniciando Demo: Strategy — Motor de Descuentos ---\n");
 
 const eCommerceCart = new ECommerceCart();
 eCommerceCart
+  .addItem({ name: "Laptop Pro", price: 1200, quantity: 1 })
+  .addItem({ name: "Mouse Inalámbrico", price: 45, quantity: 4 })
+  .addItem({ name: "Teclado Mecánico", price: 90, quantity: 2 });
+
+console.log("\n Escenario 1: Black Friday (25% todo)");
