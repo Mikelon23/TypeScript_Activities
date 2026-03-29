@@ -96,3 +96,9 @@ class BestOfDiscount implements PricingStrategy {
   }
 }
 
+// ── Carrito de Compras ─────────────────────────────────────────────────────────
+
+class ECommerceCart {
+  private items: CartItem[] = [];
+  private strategy: PricingStrategy | null = null;
+
