@@ -82,3 +82,9 @@ class FixedCoupon implements PricingStrategy {
   }
 }
 
+/** Combo: aplica múltiples estrategias y elige la de mayor beneficio */
+class BestOfDiscount implements PricingStrategy {
+  readonly name = "Mejor Descuento Disponible";
+
+  constructor(private readonly strategies: PricingStrategy[]) { }
+
