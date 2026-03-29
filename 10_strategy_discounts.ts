@@ -102,3 +102,8 @@ class ECommerceCart {
   private items: CartItem[] = [];
   private strategy: PricingStrategy | null = null;
 
+  addItem(item: CartItem): this {
+    this.items.push(item);
+    return this;
+  }
+
