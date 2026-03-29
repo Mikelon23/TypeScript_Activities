@@ -149,3 +149,10 @@ console.log("\n Escenario 3: Cupón VIP$100");
 eCommerceCart.setDiscountStrategy(new FixedCoupon("VIP100", 100)).checkout();
 
 console.log("\n Escenario 4: Elegir el mejor descuento automáticamente");
+eCommerceCart.setDiscountStrategy(
+  new BestOfDiscount([
+    new PercentageDiscount(10),
+    new BulkDiscount(2, 20),
+    new FixedCoupon("EXTRA50", 50),
+  ])
+).checkout();
