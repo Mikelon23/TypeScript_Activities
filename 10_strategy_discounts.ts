@@ -88,3 +88,11 @@ class BestOfDiscount implements PricingStrategy {
 
   constructor(private readonly strategies: PricingStrategy[]) { }
 
+  apply(items: CartItem[]): number {
+    const discounts = this.strategies.map(s => ({ name: s.name, value: s.apply(items) }));
+    const best = discounts.reduce((max, d) => (d.value > max.value ? d : max), { name: "", value: 0 });
+    console.log(`  Mejor estrategia elegida: "${best.name}" → -$${best.value.toFixed(2)}`);
+    return best.value;
+  }
+}
+
