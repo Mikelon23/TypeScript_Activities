@@ -118,3 +118,14 @@ class ECommerceCart {
     const discount = this.strategy ? this.strategy.apply(this.items) : 0;
     const total = subtotal - discount;
 
+    console.log(`\n  Resumen del Pedido:`);
+    this.items.forEach(i =>
+      console.log(`     - ${i.name} x${i.quantity}  →  $${(i.price * i.quantity).toFixed(2)}`)
+    );
+    console.log(`     Subtotal:  $${subtotal.toFixed(2)}`);
+    console.log(`     Descuento: -$${discount.toFixed(2)}`);
+    console.log(`     ─────────────────────────`);
+    console.log(`     TOTAL:     $${total.toFixed(2)}`);
+  }
+}
+
