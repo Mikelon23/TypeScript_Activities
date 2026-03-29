@@ -113,3 +113,8 @@ class ECommerceCart {
     return this;
   }
 
+  checkout(): void {
+    const subtotal = this.items.reduce((s, i) => s + i.price * i.quantity, 0);
+    const discount = this.strategy ? this.strategy.apply(this.items) : 0;
+    const total = subtotal - discount;
+
