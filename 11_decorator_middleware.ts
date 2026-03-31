@@ -27,3 +27,9 @@ interface HttpResponse {
   body: unknown;
 }
 
+// ── Handler Base (interfaz común) ─────────────────────────────────────────────
+
+interface HttpHandler {
+  handle(ctx: HttpContext): HttpResponse;
+}
+
