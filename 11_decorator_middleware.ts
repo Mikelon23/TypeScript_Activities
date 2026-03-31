@@ -22,3 +22,8 @@ interface HttpContext {
   startTime?: number;
 }
 
+interface HttpResponse {
+  status: number;
+  body: unknown;
+}
+
