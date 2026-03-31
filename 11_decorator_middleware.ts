@@ -33,3 +33,9 @@ interface HttpHandler {
   handle(ctx: HttpContext): HttpResponse;
 }
 
+// ── Handler Concreto (el "controlador" original) ───────────────────────────────
+
+class DataController implements HttpHandler {
+  handle(ctx: HttpContext): HttpResponse {
+    console.log(` [Controlador] Procesando ${ctx.method} ${ctx.path}`);
+    return {
