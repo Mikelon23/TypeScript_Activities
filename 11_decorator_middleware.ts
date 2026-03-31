@@ -39,3 +39,9 @@ class DataController implements HttpHandler {
   handle(ctx: HttpContext): HttpResponse {
     console.log(` [Controlador] Procesando ${ctx.method} ${ctx.path}`);
     return {
+      status: 200,
+      body: { message: `Hola ${ctx.user ?? "Anónimo"}! Datos procesados correctamente.`, path: ctx.path },
+    };
+  }
+}
+
