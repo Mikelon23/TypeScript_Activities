@@ -78,3 +78,8 @@ class AuthMiddleware extends HttpMiddlewareDecorator {
   handle(ctx: HttpContext): HttpResponse {
     const token = ctx.headers["authorization"]?.replace("Bearer ", "");
 
+    if (!token || !this.validTokens.has(token)) {
+      console.log(` [Auth] ✗ Token inválido. Acceso denegado.`);
+      return { status: 401, body: { error: "Unauthorized" } };
+    }
+
