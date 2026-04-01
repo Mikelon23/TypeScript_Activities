@@ -75,3 +75,6 @@ class AuthMiddleware extends HttpMiddlewareDecorator {
     ["token-admin-007", "Admin"],
   ]);
 
+  handle(ctx: HttpContext): HttpResponse {
+    const token = ctx.headers["authorization"]?.replace("Bearer ", "");
+
