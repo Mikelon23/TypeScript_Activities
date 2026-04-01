@@ -83,3 +83,9 @@ class AuthMiddleware extends HttpMiddlewareDecorator {
       return { status: 401, body: { error: "Unauthorized" } };
     }
 
+    ctx.user = this.validTokens.get(token);
+    console.log(` [Auth] ✓ Usuario autenticado: ${ctx.user}`);
+    return this.inner.handle(ctx);
+  }
+}
+
