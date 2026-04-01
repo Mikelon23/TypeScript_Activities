@@ -52,3 +52,10 @@ abstract class HttpMiddlewareDecorator implements HttpHandler {
   abstract handle(ctx: HttpContext): HttpResponse;
 }
 
+// ── Middleware: Logger ─────────────────────────────────────────────────────────
+
+class LoggerMiddleware extends HttpMiddlewareDecorator {
+  handle(ctx: HttpContext): HttpResponse {
+    ctx.startTime = Date.now();
+    console.log(` [Logger] → ${ctx.method} ${ctx.path} recibido`);
+
