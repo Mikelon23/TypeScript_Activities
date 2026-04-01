@@ -67,3 +67,11 @@ class LoggerMiddleware extends HttpMiddlewareDecorator {
   }
 }
 
+// ── Middleware: Autenticación ──────────────────────────────────────────────────
+
+class AuthMiddleware extends HttpMiddlewareDecorator {
+  private readonly validTokens: Map<string, string> = new Map([
+    ["token-miguel-123", "Miguel"],
+    ["token-admin-007", "Admin"],
+  ]);
+
