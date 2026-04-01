@@ -45,3 +45,10 @@ class DataController implements HttpHandler {
   }
 }
 
+// ── Decoradores Abstracto ─────────────────────────────────────────────────────
+
+abstract class HttpMiddlewareDecorator implements HttpHandler {
+  constructor(protected readonly inner: HttpHandler) { }
+  abstract handle(ctx: HttpContext): HttpResponse;
+}
+
