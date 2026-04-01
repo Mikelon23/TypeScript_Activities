@@ -59,3 +59,11 @@ class LoggerMiddleware extends HttpMiddlewareDecorator {
     ctx.startTime = Date.now();
     console.log(` [Logger] → ${ctx.method} ${ctx.path} recibido`);
 
+    const response = this.inner.handle(ctx);
+
+    const elapsed = Date.now() - (ctx.startTime ?? 0);
+    console.log(` [Logger] ← Respondido con status ${response.status} en ${elapsed}ms`);
+    return response;
+  }
+}
+
