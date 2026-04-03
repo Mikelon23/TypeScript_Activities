@@ -98,3 +98,8 @@ class RateLimiter extends HttpMiddlewareDecorator {
     super(inner);
   }
 
+  handle(ctx: HttpContext): HttpResponse {
+    const ip = ctx.headers["x-forwarded-for"] ?? "unknown";
+    const now = Date.now();
+    const entry = this.requestCounts.get(ip) ?? { count: 0, windowStart: now };
+
