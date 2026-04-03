@@ -103,3 +103,8 @@ class RateLimiter extends HttpMiddlewareDecorator {
     const now = Date.now();
     const entry = this.requestCounts.get(ip) ?? { count: 0, windowStart: now };
 
+    if (now - entry.windowStart > this.windowMs) {
+      entry.count = 0;
+      entry.windowStart = now;
+    }
+
