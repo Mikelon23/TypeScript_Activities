@@ -89,3 +89,8 @@ class AuthMiddleware extends HttpMiddlewareDecorator {
   }
 }
 
+// ── Middleware: Rate Limiter ───────────────────────────────────────────────────
+
+class RateLimiter extends HttpMiddlewareDecorator {
+  private requestCounts: Map<string, { count: number; windowStart: number }> = new Map();
+
