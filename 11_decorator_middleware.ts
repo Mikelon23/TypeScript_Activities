@@ -94,3 +94,7 @@ class AuthMiddleware extends HttpMiddlewareDecorator {
 class RateLimiter extends HttpMiddlewareDecorator {
   private requestCounts: Map<string, { count: number; windowStart: number }> = new Map();
 
+  constructor(inner: HttpHandler, private readonly maxRequests: number, private readonly windowMs: number) {
+    super(inner);
+  }
+
