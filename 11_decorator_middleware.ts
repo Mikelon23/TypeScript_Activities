@@ -126,3 +126,12 @@ class RateLimiter extends HttpMiddlewareDecorator {
 function runMiddlewareDemo() {
   console.log("--- Iniciando Demo: Decorator — Mini-Framework Middleware ---\n");
 
+  // Construir la "cebolla": Logger → RateLimiter → Auth → Controller
+  const pipeline: HttpHandler = new LoggerMiddleware(
+    new RateLimiter(
+      new AuthMiddleware(new DataController()),
+      3,    // máx 3 peticiones
+      5000  // ventana de 5 segundos
+    )
+  );
+
