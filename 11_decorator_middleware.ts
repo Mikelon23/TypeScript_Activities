@@ -121,3 +121,8 @@ class RateLimiter extends HttpMiddlewareDecorator {
   }
 }
 
+// ── Demo ───────────────────────────────────────────────────────────────────────
+
+function runMiddlewareDemo() {
+  console.log("--- Iniciando Demo: Decorator — Mini-Framework Middleware ---\n");
+
