@@ -108,3 +108,6 @@ class RateLimiter extends HttpMiddlewareDecorator {
       entry.windowStart = now;
     }
 
+    entry.count++;
+    this.requestCounts.set(ip, entry);
+
