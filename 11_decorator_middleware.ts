@@ -116,3 +116,8 @@ class RateLimiter extends HttpMiddlewareDecorator {
       return { status: 429, body: { error: "Too Many Requests" } };
     }
 
+    console.log(` [RateLimit] ✓ IP ${ip} — petición ${entry.count}/${this.maxRequests}`);
+    return this.inner.handle(ctx);
+  }
+}
+
