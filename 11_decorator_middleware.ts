@@ -135,3 +135,9 @@ function runMiddlewareDemo() {
     )
   );
 
+  const makeCtx = (token: string, ip: string): HttpContext => ({
+    method: "GET",
+    path: "/api/dashboard",
+    headers: { authorization: `Bearer ${token}`, "x-forwarded-for": ip },
+  });
+
