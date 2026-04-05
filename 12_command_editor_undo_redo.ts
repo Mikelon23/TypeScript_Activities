@@ -32,3 +32,8 @@ class TextDocument {
     return removed;
   }
 
+  replaceLine(index: number, newText: string): string {
+    const old = this.lines[index];
+    this.lines[index] = newText;
+    return old;
+  }
