@@ -18,3 +18,12 @@ interface Command {
   description: string;
 }
 
+// ── Documento (Receptor) ──────────────────────────────────────────────────────
+
+class TextDocument {
+  private lines: string[] = [];
+
+  insertLine(index: number, text: string): void {
+    this.lines.splice(index, 0, text);
+  }
+
