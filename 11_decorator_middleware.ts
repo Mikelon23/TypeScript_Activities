@@ -147,3 +147,11 @@ function runMiddlewareDemo() {
   console.log("\n Petición 2 — Token inválido:");
   console.log(pipeline.handle(makeCtx("token-hackeado", "192.168.1.1")));
 
+  console.log("\n Petición 3 — Token válido:");
+  console.log(pipeline.handle(makeCtx("token-miguel-123", "192.168.1.1")));
+
+  console.log("\n Petición 4 — Rate Limit excedido:");
+  console.log(pipeline.handle(makeCtx("token-miguel-123", "192.168.1.1")));
+}
+
+runMiddlewareDemo();
