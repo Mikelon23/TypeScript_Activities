@@ -141,3 +141,9 @@ function runMiddlewareDemo() {
     headers: { authorization: `Bearer ${token}`, "x-forwarded-for": ip },
   });
 
+  console.log(" Petición 1 — Token válido:");
+  console.log(pipeline.handle(makeCtx("token-miguel-123", "192.168.1.1")));
+
+  console.log("\n Petición 2 — Token inválido:");
+  console.log(pipeline.handle(makeCtx("token-hackeado", "192.168.1.1")));
+
