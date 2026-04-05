@@ -27,3 +27,8 @@ class TextDocument {
     this.lines.splice(index, 0, text);
   }
 
+  deleteLine(index: number): string {
+    const [removed] = this.lines.splice(index, 1);
+    return removed;
+  }
+
