@@ -52,3 +52,7 @@ class InsertLineCommand implements Command {
     this.description = `Insertar línea ${index + 1}: "${text}"`;
   }
 
+  execute(): void { this.doc.insertLine(this.index, this.text); }
+  undo(): void { this.doc.deleteLine(this.index); }
+}
+
