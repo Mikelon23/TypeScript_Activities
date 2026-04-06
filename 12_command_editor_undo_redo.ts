@@ -43,3 +43,12 @@ class TextDocument {
   }
 }
 
+// ── Comandos Concretos ────────────────────────────────────────────────────────
+
+class InsertLineCommand implements Command {
+  readonly description: string;
+
+  constructor(private readonly doc: TextDocument, private readonly index: number, private readonly text: string) {
+    this.description = `Insertar línea ${index + 1}: "${text}"`;
+  }
+
