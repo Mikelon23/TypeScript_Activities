@@ -37,3 +37,9 @@ class TextDocument {
     this.lines[index] = newText;
     return old;
   }
+
+  getContent(): string {
+    return this.lines.map((l, i) => `  ${i + 1}. ${l}`).join("\n");
+  }
+}
+
