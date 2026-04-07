@@ -56,3 +56,11 @@ class InsertLineCommand implements Command {
   undo(): void { this.doc.deleteLine(this.index); }
 }
 
+class DeleteLineCommand implements Command {
+  readonly description: string;
+  private deletedText: string = "";
+
+  constructor(private readonly doc: TextDocument, private readonly index: number) {
+    this.description = `Eliminar línea ${index + 1}`;
+  }
+
