@@ -64,3 +64,7 @@ class DeleteLineCommand implements Command {
     this.description = `Eliminar línea ${index + 1}`;
   }
 
+  execute(): void { this.deletedText = this.doc.deleteLine(this.index); }
+  undo(): void { this.doc.insertLine(this.index, this.deletedText); }
+}
+
