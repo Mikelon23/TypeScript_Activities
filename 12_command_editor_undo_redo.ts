@@ -72,3 +72,7 @@ class ReplaceLineCommand implements Command {
   readonly description: string;
   private oldText: string = "";
 
+  constructor(private readonly doc: TextDocument, private readonly index: number, private readonly newText: string) {
+    this.description = `Reemplazar línea ${index + 1} con: "${newText}"`;
+  }
+
