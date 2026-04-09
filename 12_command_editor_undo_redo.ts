@@ -80,3 +80,9 @@ class ReplaceLineCommand implements Command {
   undo(): void { this.doc.replaceLine(this.index, this.oldText); }
 }
 
+// ── Editor (Invocador) ────────────────────────────────────────────────────────
+
+class TextEditor {
+  private history: Command[] = [];
+  private redoStack: Command[] = [];
+
