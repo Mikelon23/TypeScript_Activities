@@ -76,3 +76,7 @@ class ReplaceLineCommand implements Command {
     this.description = `Reemplazar línea ${index + 1} con: "${newText}"`;
   }
 
+  execute(): void { this.oldText = this.doc.replaceLine(this.index, this.newText); }
+  undo(): void { this.doc.replaceLine(this.index, this.oldText); }
+}
+
