@@ -68,3 +68,7 @@ class DeleteLineCommand implements Command {
   undo(): void { this.doc.insertLine(this.index, this.deletedText); }
 }
 
+class ReplaceLineCommand implements Command {
+  readonly description: string;
+  private oldText: string = "";
+
