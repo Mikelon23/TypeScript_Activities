@@ -90,3 +90,8 @@ class TextEditor {
 
   run(command: Command): void {
     command.execute();
+    this.history.push(command);
+    this.redoStack = []; // Cualquier acción nueva borra el historial de redo
+    console.log(` Ejecutado: ${command.description}`);
+  }
+
