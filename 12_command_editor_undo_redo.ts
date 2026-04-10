@@ -98,3 +98,8 @@ class TextEditor {
   undo(): void {
     const command = this.history.pop();
     if (!command) { console.log(" Nada que deshacer."); return; }
+    command.undo();
+    this.redoStack.push(command);
+    console.log(` Deshecho: ${command.description}`);
+  }
+
