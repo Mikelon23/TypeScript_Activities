@@ -95,3 +95,6 @@ class TextEditor {
     console.log(` Ejecutado: ${command.description}`);
   }
 
+  undo(): void {
+    const command = this.history.pop();
+    if (!command) { console.log(" Nada que deshacer."); return; }
