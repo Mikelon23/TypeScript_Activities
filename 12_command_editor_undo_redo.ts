@@ -86,3 +86,7 @@ class TextEditor {
   private history: Command[] = [];
   private redoStack: Command[] = [];
 
+  constructor(public readonly document: TextDocument) { }
+
+  run(command: Command): void {
+    command.execute();
