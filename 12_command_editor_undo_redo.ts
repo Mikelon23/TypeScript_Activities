@@ -111,3 +111,7 @@ class TextEditor {
     console.log(` Rehecho: ${command.description}`);
   }
 
+  printDocument(): void {
+    console.log(`\n Contenido actual del documento:\n${this.document.getContent() || "  (vacío)"}\n`);
+  }
+}
