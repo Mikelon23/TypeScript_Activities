@@ -106,3 +106,8 @@ class TextEditor {
   redo(): void {
     const command = this.redoStack.pop();
     if (!command) { console.log(" Nada que rehacer."); return; }
+    command.execute();
+    this.history.push(command);
+    console.log(` Rehecho: ${command.description}`);
+  }
+
