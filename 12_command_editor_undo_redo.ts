@@ -103,3 +103,6 @@ class TextEditor {
     console.log(` Deshecho: ${command.description}`);
   }
 
+  redo(): void {
+    const command = this.redoStack.pop();
+    if (!command) { console.log(" Nada que rehacer."); return; }
