@@ -115,3 +115,11 @@ class TextEditor {
     console.log(`\n Contenido actual del documento:\n${this.document.getContent() || "  (vacío)"}\n`);
   }
 }
+
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+function runEditorDemo() {
+  console.log("--- Iniciando Demo: Command Pattern — Editor con Undo/Redo ---\n");
+
+  const doc = new TextDocument();
+  const editor = new TextEditor(doc);
