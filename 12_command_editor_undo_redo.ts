@@ -123,3 +123,9 @@ function runEditorDemo() {
 
   const doc = new TextDocument();
   const editor = new TextEditor(doc);
+
+  editor.run(new InsertLineCommand(doc, 0, "# Título del Documento"));
+  editor.run(new InsertLineCommand(doc, 1, "Introducción al patrón Command."));
+  editor.run(new InsertLineCommand(doc, 2, "Esta es la tercer línea."));
+  editor.printDocument();
+
