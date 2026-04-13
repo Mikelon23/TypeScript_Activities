@@ -31,3 +31,7 @@ function illegalTransition(from: string, action: string): void {
 class PendingState implements OrderState {
   readonly stateName = "PENDIENTE";
 
+  pay(order: Order): void {
+    console.log(` [${this.stateName}] Pago procesado correctamente.`);
+    order.setState(new PaidState());
+  }
