@@ -28,3 +28,6 @@ function illegalTransition(from: string, action: string): void {
   console.log(` [${from}] Transición inválida: no puedes "${action}" desde este estado.`);
 }
 
+class PendingState implements OrderState {
+  readonly stateName = "PENDIENTE";
+
