@@ -16,3 +16,9 @@
 interface OrderState {
   readonly stateName: string;
   pay(order: Order): void;
+  pack(order: Order): void;
+  ship(order: Order): void;
+  deliver(order: Order): void;
+  cancel(order: Order): void;
+}
+
