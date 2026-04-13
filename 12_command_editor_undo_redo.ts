@@ -142,3 +142,9 @@ function runEditorDemo() {
   editor.undo();
   editor.printDocument();
 
+  console.log(" Rehacer 1 vez...");
+  editor.redo();
+  editor.printDocument();
+}
+
+runEditorDemo();
