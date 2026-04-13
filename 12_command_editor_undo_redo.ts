@@ -137,3 +137,8 @@ function runEditorDemo() {
   editor.run(new DeleteLineCommand(doc, 2));
   editor.printDocument();
 
+  console.log(" Deshacer 2 veces...");
+  editor.undo();
+  editor.undo();
+  editor.printDocument();
+
