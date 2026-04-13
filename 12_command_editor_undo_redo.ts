@@ -129,3 +129,11 @@ function runEditorDemo() {
   editor.run(new InsertLineCommand(doc, 2, "Esta es la tercer línea."));
   editor.printDocument();
 
+  console.log(" Reemplazando línea 2...");
+  editor.run(new ReplaceLineCommand(doc, 1, "El patrón Command es extremadamente poderoso."));
+  editor.printDocument();
+
+  console.log(" Eliminando línea 3...");
+  editor.run(new DeleteLineCommand(doc, 2));
+  editor.printDocument();
+
