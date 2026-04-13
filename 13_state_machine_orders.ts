@@ -22,3 +22,9 @@ interface OrderState {
   cancel(order: Order): void;
 }
 
+// ── Estados Concretos ─────────────────────────────────────────────────────────
+
+function illegalTransition(from: string, action: string): void {
+  console.log(` [${from}] Transición inválida: no puedes "${action}" desde este estado.`);
+}
+
