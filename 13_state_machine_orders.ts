@@ -35,3 +35,6 @@ class PendingState implements OrderState {
     console.log(` [${this.stateName}] Pago procesado correctamente.`);
     order.setState(new PaidState());
   }
+  pack(order: Order): void { illegalTransition(this.stateName, "empacar"); }
+  ship(order: Order): void { illegalTransition(this.stateName, "enviar"); }
+  deliver(order: Order): void { illegalTransition(this.stateName, "entregar"); }
