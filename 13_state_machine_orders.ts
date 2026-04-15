@@ -43,3 +43,7 @@ class PendingState implements OrderState {
     order.setState(new CancelledState());
   }
 }
+
+class PaidState implements OrderState {
+  readonly stateName = "PAGADO";
+
