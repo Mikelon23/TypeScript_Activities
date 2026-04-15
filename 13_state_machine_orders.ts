@@ -38,3 +38,8 @@ class PendingState implements OrderState {
   pack(order: Order): void { illegalTransition(this.stateName, "empacar"); }
   ship(order: Order): void { illegalTransition(this.stateName, "enviar"); }
   deliver(order: Order): void { illegalTransition(this.stateName, "entregar"); }
+  cancel(order: Order): void {
+    console.log(` [${this.stateName}] Pedido cancelado antes del pago.`);
+    order.setState(new CancelledState());
+  }
+}
