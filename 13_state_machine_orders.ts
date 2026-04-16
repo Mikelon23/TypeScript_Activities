@@ -60,3 +60,6 @@ class PaidState implements OrderState {
   }
 }
 
+class PackedState implements OrderState {
+  readonly stateName = "EMPACADO";
+
