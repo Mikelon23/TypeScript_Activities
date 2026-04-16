@@ -63,3 +63,9 @@ class PaidState implements OrderState {
 class PackedState implements OrderState {
   readonly stateName = "EMPACADO";
 
+  pay(order: Order): void { illegalTransition(this.stateName, "pagar"); }
+  pack(order: Order): void { illegalTransition(this.stateName, "empacar de nuevo"); }
+  ship(order: Order): void {
+    console.log(` [${this.stateName}] Pedido recogido por mensajería y en camino.`);
+    order.setState(new ShippedState());
+  }
