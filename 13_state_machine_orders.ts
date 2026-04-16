@@ -47,3 +47,8 @@ class PendingState implements OrderState {
 class PaidState implements OrderState {
   readonly stateName = "PAGADO";
 
+  pay(order: Order): void { illegalTransition(this.stateName, "pagar de nuevo"); }
+  pack(order: Order): void {
+    console.log(` [${this.stateName}] Pedido empacado en el almacén.`);
+    order.setState(new PackedState());
+  }
