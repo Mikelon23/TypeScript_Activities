@@ -52,3 +52,11 @@ class PaidState implements OrderState {
     console.log(` [${this.stateName}] Pedido empacado en el almacén.`);
     order.setState(new PackedState());
   }
+  ship(order: Order): void { illegalTransition(this.stateName, "enviar sin empacar"); }
+  deliver(order: Order): void { illegalTransition(this.stateName, "entregar sin enviar"); }
+  cancel(order: Order): void {
+    console.log(` [${this.stateName}] Pedido cancelado. Se emitirá reembolso.`);
+    order.setState(new CancelledState());
+  }
+}
+
