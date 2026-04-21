@@ -93,3 +93,8 @@ class DeliveredState implements OrderState {
   readonly stateName = "ENTREGADO";
   pay(order: Order): void { illegalTransition(this.stateName, "pagar"); }
   pack(order: Order): void { illegalTransition(this.stateName, "empacar"); }
+  ship(order: Order): void { illegalTransition(this.stateName, "enviar"); }
+  deliver(order: Order): void { illegalTransition(this.stateName, "entregar de nuevo"); }
+  cancel(order: Order): void { illegalTransition(this.stateName, "cancelar ya entregado"); }
+}
+
