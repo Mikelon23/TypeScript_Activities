@@ -86,3 +86,6 @@ class ShippedState implements OrderState {
     console.log(` [${this.stateName}] ¡Pedido entregado exitosamente al cliente!`);
     order.setState(new DeliveredState());
   }
+  cancel(order: Order): void { illegalTransition(this.stateName, "cancelar en tránsito"); }
+}
+
