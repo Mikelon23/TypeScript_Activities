@@ -69,3 +69,10 @@ class PackedState implements OrderState {
     console.log(` [${this.stateName}] Pedido recogido por mensajería y en camino.`);
     order.setState(new ShippedState());
   }
+  deliver(order: Order): void { illegalTransition(this.stateName, "entregar sin enviar"); }
+  cancel(order: Order): void {
+    console.log(` [${this.stateName}] Pedido cancelado. Retornando a almacén.`);
+    order.setState(new CancelledState());
+  }
+}
+
