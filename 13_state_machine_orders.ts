@@ -98,3 +98,7 @@ class DeliveredState implements OrderState {
   cancel(order: Order): void { illegalTransition(this.stateName, "cancelar ya entregado"); }
 }
 
+class CancelledState implements OrderState {
+  readonly stateName = "CANCELADO";
+  pay(order: Order): void { illegalTransition(this.stateName, "pagar"); }
+  pack(order: Order): void { illegalTransition(this.stateName, "empacar"); }
