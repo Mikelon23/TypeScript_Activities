@@ -82,3 +82,7 @@ class ShippedState implements OrderState {
   pay(order: Order): void { illegalTransition(this.stateName, "pagar"); }
   pack(order: Order): void { illegalTransition(this.stateName, "empacar"); }
   ship(order: Order): void { illegalTransition(this.stateName, "enviar de nuevo"); }
+  deliver(order: Order): void {
+    console.log(` [${this.stateName}] ¡Pedido entregado exitosamente al cliente!`);
+    order.setState(new DeliveredState());
+  }
