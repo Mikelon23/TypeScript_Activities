@@ -76,3 +76,6 @@ class PackedState implements OrderState {
   }
 }
 
+class ShippedState implements OrderState {
+  readonly stateName = "ENVIADO";
+
