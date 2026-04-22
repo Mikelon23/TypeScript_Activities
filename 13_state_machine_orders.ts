@@ -107,3 +107,8 @@ class CancelledState implements OrderState {
   cancel(order: Order): void { illegalTransition(this.stateName, "cancelar de nuevo"); }
 }
 
+// ── Clase Pedido (Contexto) ───────────────────────────────────────────────────
+
+class Order {
+  private state: OrderState;
+
