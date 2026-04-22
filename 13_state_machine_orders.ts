@@ -112,3 +112,8 @@ class CancelledState implements OrderState {
 class Order {
   private state: OrderState;
 
+  constructor(public readonly id: string) {
+    this.state = new PendingState();
+    console.log(` Pedido #${id} creado. Estado: ${this.state.stateName}`);
+  }
+
