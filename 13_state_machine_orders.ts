@@ -122,3 +122,7 @@ class Order {
     console.log(`     ↳ Nuevo estado: ${state.stateName}`);
   }
 
+  getState(): string { return this.state.stateName; }
+
+  pay(): void { this.state.pay(this); }
+  pack(): void { this.state.pack(this); }
