@@ -126,3 +126,8 @@ class Order {
 
   pay(): void { this.state.pay(this); }
   pack(): void { this.state.pack(this); }
+  ship(): void { this.state.ship(this); }
+  deliver(): void { this.state.deliver(this); }
+  cancel(): void { this.state.cancel(this); }
+}
+
