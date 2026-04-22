@@ -117,3 +117,8 @@ class Order {
     console.log(` Pedido #${id} creado. Estado: ${this.state.stateName}`);
   }
 
+  setState(state: OrderState): void {
+    this.state = state;
+    console.log(`     ↳ Nuevo estado: ${state.stateName}`);
+  }
+
