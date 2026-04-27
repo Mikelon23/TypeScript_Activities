@@ -145,3 +145,8 @@ function runStateMachineDemo() {
   order1.cancel(); // ← Intento ilegal al final
 
   console.log("\n Flujo ILEGAL (intentar enviar sin pagar):");
+  const order2 = new Order("ORD-002");
+  order2.ship();   // ← Ilegal
+  order2.pay();
+  order2.ship();   // ← Ilegal, falta empacar
+
