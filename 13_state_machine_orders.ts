@@ -131,3 +131,17 @@ class Order {
   cancel(): void { this.state.cancel(this); }
 }
 
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+function runStateMachineDemo() {
+  console.log("--- Iniciando Demo: State Machine — Ciclo de Vida de Pedidos ---\n");
+
+  console.log("Flujo NORMAL (Pendiente → Entregado):");
+  const order1 = new Order("ORD-001");
+  order1.pay();
+  order1.pack();
+  order1.ship();
+  order1.deliver();
+  order1.cancel(); // ← Intento ilegal al final
+
+  console.log("\n Flujo ILEGAL (intentar enviar sin pagar):");
