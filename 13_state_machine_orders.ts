@@ -153,3 +153,8 @@ function runStateMachineDemo() {
   console.log("\n Flujo de CANCELACIÓN:");
   const order3 = new Order("ORD-003");
   order3.pay();
+  order3.cancel();
+  order3.pay(); // ← Intento después de cancelar
+}
+
+runStateMachineDemo();
