@@ -19,3 +19,6 @@ type Entity = { id: string };
 
 // ── Repositorio Genérico ──────────────────────────────────────────────────────
 
+interface IRepository<T extends Entity> {
+  findById(id: string): T | undefined;
+  findAll(): T[];
