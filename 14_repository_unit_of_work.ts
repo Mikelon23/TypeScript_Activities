@@ -22,3 +22,8 @@ type Entity = { id: string };
 interface IRepository<T extends Entity> {
   findById(id: string): T | undefined;
   findAll(): T[];
+  add(entity: T): void;
+  update(entity: T): void;
+  delete(id: string): void;
+}
+
