@@ -150,3 +150,6 @@ function runStateMachineDemo() {
   order2.pay();
   order2.ship();   // ← Ilegal, falta empacar
 
+  console.log("\n Flujo de CANCELACIÓN:");
+  const order3 = new Order("ORD-003");
+  order3.pay();
