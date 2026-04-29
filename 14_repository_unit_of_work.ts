@@ -48,3 +48,8 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
     });
     return Array.from(merged.values());
   }
+
+  add(entity: T): void { this.staging.set(entity.id, entity); }
+  update(entity: T): void { this.staging.set(entity.id, entity); }
+  delete(id: string): void { this.staging.set(id, null); }
+
