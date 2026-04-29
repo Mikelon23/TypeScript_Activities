@@ -40,3 +40,11 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
     return this.committed.get(id);
   }
 
+  findAll(): T[] {
+    const merged: Map<string, T> = new Map(this.committed);
+    this.staging.forEach((val, key) => {
+      if (val === null) merged.delete(key);
+      else merged.set(key, val);
+    });
+    return Array.from(merged.values());
+  }
