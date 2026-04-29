@@ -53,3 +53,7 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
   update(entity: T): void { this.staging.set(entity.id, entity); }
   delete(id: string): void { this.staging.set(id, null); }
 
+  /** Persiste los cambios en staging al almacén confirmado */
+  commit(): void {
+    this.staging.forEach((val, key) => {
+      if (val === null) this.committed.delete(key);
