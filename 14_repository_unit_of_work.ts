@@ -27,3 +27,8 @@ interface IRepository<T extends Entity> {
   delete(id: string): void;
 }
 
+class InMemoryRepository<T extends Entity> implements IRepository<T> {
+  // Guardamos el "snapshot" original y los cambios pendientes
+  private committed: Map<string, T> = new Map();
+  private staging: Map<string, T | null> = new Map(); // null = marcado para eliminar
+
