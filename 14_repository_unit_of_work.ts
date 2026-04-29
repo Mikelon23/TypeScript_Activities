@@ -32,3 +32,11 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
   private committed: Map<string, T> = new Map();
   private staging: Map<string, T | null> = new Map(); // null = marcado para eliminar
 
+  findById(id: string): T | undefined {
+    if (this.staging.has(id)) {
+      const staged = this.staging.get(id);
+      return staged === null ? undefined : staged;
+    }
+    return this.committed.get(id);
+  }
+
