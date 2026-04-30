@@ -73,3 +73,8 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
 class UnitOfWork {
   private repos: InMemoryRepository<any>[] = [];
 
+  register<T extends Entity>(repo: InMemoryRepository<T>): InMemoryRepository<T> {
+    this.repos.push(repo);
+    return repo;
+  }
+
