@@ -62,3 +62,9 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
     this.staging.clear();
   }
 
+  /** Descarta todos los cambios pendientes */
+  rollback(): void {
+    this.staging.clear();
+  }
+}
+
