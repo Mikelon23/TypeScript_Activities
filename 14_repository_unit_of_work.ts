@@ -68,3 +68,8 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
   }
 }
 
+// ── Unit of Work ──────────────────────────────────────────────────────────────
+
+class UnitOfWork {
+  private repos: InMemoryRepository<any>[] = [];
+
