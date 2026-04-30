@@ -57,3 +57,8 @@ class InMemoryRepository<T extends Entity> implements IRepository<T> {
   commit(): void {
     this.staging.forEach((val, key) => {
       if (val === null) this.committed.delete(key);
+      else this.committed.set(key, val);
+    });
+    this.staging.clear();
+  }
+
