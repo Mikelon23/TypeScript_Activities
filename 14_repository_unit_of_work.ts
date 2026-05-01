@@ -78,3 +78,8 @@ class UnitOfWork {
     return repo;
   }
 
+  commit(): void {
+    try {
+      this.repos.forEach(r => r.commit());
+      console.log("Transacción confirmada");
+    } catch (err) {
