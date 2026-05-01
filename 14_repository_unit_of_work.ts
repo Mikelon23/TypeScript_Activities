@@ -83,3 +83,8 @@ class UnitOfWork {
       this.repos.forEach(r => r.commit());
       console.log("Transacción confirmada");
     } catch (err) {
+      this.rollback();
+      throw err;
+    }
+  }
+
