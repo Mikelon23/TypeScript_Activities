@@ -88,3 +88,9 @@ class UnitOfWork {
     }
   }
 
+  rollback(): void {
+    this.repos.forEach(r => r.rollback());
+    console.log("Transacción revertida");
+  }
+}
+
