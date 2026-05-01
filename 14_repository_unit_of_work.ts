@@ -94,3 +94,8 @@ class UnitOfWork {
   }
 }
 
+// ── Entidades de Ejemplo ──────────────────────────────────────────────────────
+
+interface User extends Entity { name: string; email: string; balance: number; }
+interface Wallet extends Entity { userId: string; transactions: string[]; }
+
