@@ -99,3 +99,9 @@ class UnitOfWork {
 interface User extends Entity { name: string; email: string; balance: number; }
 interface Wallet extends Entity { userId: string; transactions: string[]; }
 
+// ── Servicio de Aplicación ────────────────────────────────────────────────────
+
+function transferFunds(
+  userRepo: IRepository<User>,
+  walletRepo: IRepository<Wallet>,
+  uow: UnitOfWork,
