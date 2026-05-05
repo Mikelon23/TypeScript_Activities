@@ -105,3 +105,6 @@ function transferFunds(
   userRepo: IRepository<User>,
   walletRepo: IRepository<Wallet>,
   uow: UnitOfWork,
+  fromId: string,
+  toId: string,
+  amount: number
