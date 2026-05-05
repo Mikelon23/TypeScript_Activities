@@ -112,3 +112,6 @@ function transferFunds(
   const sender = userRepo.findById(fromId);
   const receiver = userRepo.findById(toId);
 
+  if (!sender || !receiver) throw new Error("Usuario no encontrado.");
+  if (sender.balance < amount) throw new Error(`Saldo insuficiente: $${sender.balance} < $${amount}`);
+
