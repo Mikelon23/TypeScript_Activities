@@ -115,3 +115,6 @@ function transferFunds(
   if (!sender || !receiver) throw new Error("Usuario no encontrado.");
   if (sender.balance < amount) throw new Error(`Saldo insuficiente: $${sender.balance} < $${amount}`);
 
+  userRepo.update({ ...sender, balance: sender.balance - amount });
+  userRepo.update({ ...receiver, balance: receiver.balance + amount });
+
