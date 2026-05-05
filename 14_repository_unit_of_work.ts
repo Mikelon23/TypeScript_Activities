@@ -108,3 +108,7 @@ function transferFunds(
   fromId: string,
   toId: string,
   amount: number
+): void {
+  const sender = userRepo.findById(fromId);
+  const receiver = userRepo.findById(toId);
+
