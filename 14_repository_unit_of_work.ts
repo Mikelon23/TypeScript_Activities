@@ -132,3 +132,7 @@ function transferFunds(
 function runRepositoryDemo() {
   console.log("Iniciando Demo: Repository + Unit of Work \n");
 
+  const uow = new UnitOfWork();
+  const userRepo = uow.register(new InMemoryRepository<User>());
+  const walletRepo = uow.register(new InMemoryRepository<Wallet>());
+
