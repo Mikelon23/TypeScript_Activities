@@ -118,3 +118,6 @@ function transferFunds(
   userRepo.update({ ...sender, balance: sender.balance - amount });
   userRepo.update({ ...receiver, balance: receiver.balance + amount });
 
+  const senderWallet = walletRepo.findById(fromId)!;
+  const receiverWallet = walletRepo.findById(toId)!;
+
