@@ -121,3 +121,8 @@ function transferFunds(
   const senderWallet = walletRepo.findById(fromId)!;
   const receiverWallet = walletRepo.findById(toId)!;
 
+  walletRepo.update({ ...senderWallet, transactions: [...senderWallet.transactions, `DEBITO $${amount} hacia ${toId}`] });
+  walletRepo.update({ ...receiverWallet, transactions: [...receiverWallet.transactions, `CREDITO $${amount} desde ${fromId}`] });
+
+  uow.commit();
+}
