@@ -126,3 +126,9 @@ function transferFunds(
 
   uow.commit();
 }
+
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+function runRepositoryDemo() {
+  console.log("Iniciando Demo: Repository + Unit of Work \n");
+
