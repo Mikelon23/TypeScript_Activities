@@ -164,3 +164,9 @@ function runRepositoryDemo() {
   }
 
   console.log("Wallet de Miguel:");
+  console.log("  ", walletRepo.findById("u1")?.transactions);
+  console.log("Wallet de Ana:");
+  console.log("  ", walletRepo.findById("u2")?.transactions);
+}
+
+runRepositoryDemo();
