@@ -142,3 +142,10 @@ function runRepositoryDemo() {
   walletRepo.add({ id: "u2", userId: "u2", transactions: [] });
   uow.commit();
 
+  const printBalances = () => {
+    userRepo.findAll().forEach(u => console.log(`    ${u.name}: $${u.balance}`));
+  };
+
+  console.log("Balances iniciales:");
+  printBalances();
+
