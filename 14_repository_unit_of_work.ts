@@ -155,3 +155,6 @@ function runRepositoryDemo() {
     printBalances();
   } catch (e: any) { console.error("Error:", e.message); }
 
+  console.log("Transferencia fallida: Ana → Miguel ($9999) — Saldo insuficiente:");
+  try {
+    transferFunds(userRepo, walletRepo, uow, "u2", "u1", 9999);
