@@ -15,3 +15,9 @@
 
 abstract class FileSystemNode {
   constructor(public name: string) { }
+
+  abstract getSize(): number;           // Tamaño en bytes (carpetas = suma de hijos)
+  abstract print(indent?: string): void;
+  abstract find(name: string): FileSystemNode | null;
+}
+
