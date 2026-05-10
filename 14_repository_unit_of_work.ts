@@ -149,3 +149,5 @@ function runRepositoryDemo() {
   console.log("Balances iniciales:");
   printBalances();
 
+  console.log("Transferencia exitosa: Miguel → Ana ($150):");
+  try {
