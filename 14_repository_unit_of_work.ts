@@ -136,3 +136,9 @@ function runRepositoryDemo() {
   const userRepo = uow.register(new InMemoryRepository<User>());
   const walletRepo = uow.register(new InMemoryRepository<Wallet>());
 
+  userRepo.add({ id: "u1", name: "Miguel", email: "miguel@dev.io", balance: 500 });
+  userRepo.add({ id: "u2", name: "Ana", email: "ana@dev.io", balance: 200 });
+  walletRepo.add({ id: "u1", userId: "u1", transactions: [] });
+  walletRepo.add({ id: "u2", userId: "u2", transactions: [] });
+  uow.commit();
+
