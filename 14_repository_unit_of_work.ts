@@ -151,3 +151,7 @@ function runRepositoryDemo() {
 
   console.log("Transferencia exitosa: Miguel → Ana ($150):");
   try {
+    transferFunds(userRepo, walletRepo, uow, "u1", "u2", 150);
+    printBalances();
+  } catch (e: any) { console.error("Error:", e.message); }
+
