@@ -158,3 +158,9 @@ function runRepositoryDemo() {
   console.log("Transferencia fallida: Ana → Miguel ($9999) — Saldo insuficiente:");
   try {
     transferFunds(userRepo, walletRepo, uow, "u2", "u1", 9999);
+  } catch (e: any) {
+    console.error(`Error capturado: ${e.message}`);
+    uow.rollback();
+  }
+
+  console.log("Wallet de Miguel:");
