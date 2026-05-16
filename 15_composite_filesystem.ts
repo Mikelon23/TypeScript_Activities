@@ -37,3 +37,8 @@ class VirtualFile extends FileSystemNode {
     return this.name === name ? this : null;
   }
 
+  print(indent: string = ""): void {
+    console.log(`${indent} ${this.name} (${this.size} bytes)`);
+  }
+}
+
