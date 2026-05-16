@@ -32,3 +32,8 @@ class VirtualFile extends FileSystemNode {
 
   readContent(): string { return this.content; }
   writeContent(text: string): void { this.content = text; }
+
+  find(name: string): FileSystemNode | null {
+    return this.name === name ? this : null;
+  }
+
