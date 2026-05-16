@@ -27,3 +27,8 @@ class VirtualFile extends FileSystemNode {
   constructor(name: string, private readonly size: number, private content: string = "") {
     super(name);
   }
+
+  getSize(): number { return this.size; }
+
+  readContent(): string { return this.content; }
+  writeContent(text: string): void { this.content = text; }
