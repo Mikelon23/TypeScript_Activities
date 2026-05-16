@@ -21,3 +21,9 @@ abstract class FileSystemNode {
   abstract find(name: string): FileSystemNode | null;
 }
 
+// ── Hoja: Archivo ─────────────────────────────────────────────────────────────
+
+class VirtualFile extends FileSystemNode {
+  constructor(name: string, private readonly size: number, private content: string = "") {
+    super(name);
+  }
