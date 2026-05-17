@@ -68,3 +68,8 @@ class Directory extends FileSystemNode {
   find(name: string): FileSystemNode | null {
     if (this.name === name) return this;
     for (const child of this.children) {
+      const found = child.find(name);
+      if (found) return found;
+    }
+    return null;
+  }
