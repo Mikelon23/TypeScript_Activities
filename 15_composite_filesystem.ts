@@ -76,3 +76,9 @@ class Directory extends FileSystemNode {
 
   list(): FileSystemNode[] { return [...this.children]; }
 
+  print(indent: string = ""): void {
+    console.log(`${indent} ${this.name}/ (${this.getSize()} bytes total)`);
+    this.children.forEach(child => child.print(indent + "   "));
+  }
+}
+
