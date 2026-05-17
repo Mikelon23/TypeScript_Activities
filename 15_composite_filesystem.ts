@@ -73,3 +73,6 @@ class Directory extends FileSystemNode {
     }
     return null;
   }
+
+  list(): FileSystemNode[] { return [...this.children]; }
+
