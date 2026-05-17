@@ -61,3 +61,7 @@ class Directory extends FileSystemNode {
     return true;
   }
 
+  getSize(): number {
+    return this.children.reduce((total, child) => total + child.getSize(), 0);
+  }
+
