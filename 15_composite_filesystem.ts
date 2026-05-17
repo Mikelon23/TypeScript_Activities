@@ -54,3 +54,6 @@ class Directory extends FileSystemNode {
     return this;
   }
 
+  remove(name: string): boolean {
+    const idx = this.children.findIndex(c => c.name === name);
+    if (idx === -1) return false;
