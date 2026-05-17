@@ -65,3 +65,6 @@ class Directory extends FileSystemNode {
     return this.children.reduce((total, child) => total + child.getSize(), 0);
   }
 
+  find(name: string): FileSystemNode | null {
+    if (this.name === name) return this;
+    for (const child of this.children) {
