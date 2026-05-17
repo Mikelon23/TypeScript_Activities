@@ -42,3 +42,10 @@ class VirtualFile extends FileSystemNode {
   }
 }
 
+// ── Composite: Carpeta ────────────────────────────────────────────────────────
+
+class Directory extends FileSystemNode {
+  private children: FileSystemNode[] = [];
+
+  constructor(name: string) { super(name); }
+
