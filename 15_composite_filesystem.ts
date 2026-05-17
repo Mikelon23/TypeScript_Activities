@@ -49,3 +49,8 @@ class Directory extends FileSystemNode {
 
   constructor(name: string) { super(name); }
 
+  add(node: FileSystemNode): this {
+    this.children.push(node);
+    return this;
+  }
+
