@@ -91,3 +91,11 @@ function runFileSystemDemo() {
 
   const srcDir = new Directory("src");
   srcDir
+    .add(new VirtualFile("index.ts", 1024, "console.log('Hello World')"))
+    .add(new VirtualFile("utils.ts", 512))
+    .add(
+      new Directory("components")
+        .add(new VirtualFile("Button.tsx", 2048))
+        .add(new VirtualFile("Modal.tsx", 3096))
+    );
+
