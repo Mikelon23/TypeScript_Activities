@@ -82,3 +82,8 @@ class Directory extends FileSystemNode {
   }
 }
 
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+function runFileSystemDemo() {
+  console.log("--- Iniciando Demo: Composite — Sistema de Archivos en Memoria ---\n");
+
