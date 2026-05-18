@@ -87,3 +87,7 @@ class Directory extends FileSystemNode {
 function runFileSystemDemo() {
   console.log("--- Iniciando Demo: Composite — Sistema de Archivos en Memoria ---\n");
 
+  const root = new Directory("root");
+
+  const srcDir = new Directory("src");
+  srcDir
