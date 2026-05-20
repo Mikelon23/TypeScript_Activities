@@ -127,3 +127,6 @@ function runFileSystemDemo() {
     console.log(`  Contenido: "${found.readContent() || "(vacío)"}"`);
   }
 
+  const notFound = root.find("nonexistent.ts");
+  console.log(`  Buscando "nonexistent.ts": ${notFound ? "Encontrado" : "No existe"}`);
+
