@@ -109,3 +109,7 @@ function runFileSystemDemo() {
     .add(publicDir)
     .add(new VirtualFile("package.json", 640))
     .add(new VirtualFile("tsconfig.json", 384));
+
+  console.log("Estructura completa:");
+  root.print();
+
