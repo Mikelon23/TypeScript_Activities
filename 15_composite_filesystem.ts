@@ -113,3 +113,7 @@ function runFileSystemDemo() {
   console.log("Estructura completa:");
   root.print();
 
+  console.log(`\n Tamaño total del proyecto: ${root.getSize()} bytes`);
+  console.log(`Solo /src: ${srcDir.getSize()} bytes`);
+  console.log(`Solo /public: ${publicDir.getSize()} bytes`);
+
