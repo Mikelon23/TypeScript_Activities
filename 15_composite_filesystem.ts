@@ -123,3 +123,7 @@ function runFileSystemDemo() {
     console.log(`  Encontrado: "${found.name}" — Tamaño: ${found.getSize()} bytes`);
   }
 
+  if (found instanceof VirtualFile) {
+    console.log(`  Contenido: "${found.readContent() || "(vacío)"}"`);
+  }
+
