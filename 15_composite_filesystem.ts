@@ -130,3 +130,10 @@ function runFileSystemDemo() {
   const notFound = root.find("nonexistent.ts");
   console.log(`  Buscando "nonexistent.ts": ${notFound ? "Encontrado" : "No existe"}`);
 
+  console.log("\nEliminando logo.svg de /public:");
+  publicDir.remove("logo.svg");
+  publicDir.print("  ");
+  console.log(`  Nuevo tamaño /public: ${publicDir.getSize()} bytes`);
+}
+
+runFileSystemDemo();
