@@ -1,0 +1,18 @@
+/**
+ * Ejercicio 16: Patrón Builder — Constructor de Consultas SQL Tipado (Mini-QueryBuilder)
+ * Dificultad: Media-Alta
+ *
+ * Problema en la vida real:
+ * ORMs como Prisma, TypeORM y Sequelize permiten construir queries de forma fluida
+ * y con type-safety. Concatenar strings SQL a mano es propenso a inyección SQL
+ * y errores de sintaxis difíciles de depurar.
+ *
+ * Solución: Builder Pattern con Fluent Interface — cada método retorna `this`
+ * para encadenamiento, y el query se "compila" solo al final con .build().
+ */
+
+// ── Tipos ─────────────────────────────────────────────────────────────────────
+
+type OrderDirection = "ASC" | "DESC";
+type JoinType = "INNER" | "LEFT" | "RIGHT" | "FULL";
+
