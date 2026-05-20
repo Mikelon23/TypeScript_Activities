@@ -99,3 +99,8 @@ function runFileSystemDemo() {
         .add(new VirtualFile("Modal.tsx", 3096))
     );
 
+  const publicDir = new Directory("public");
+  publicDir
+    .add(new VirtualFile("logo.svg", 8192))
+    .add(new VirtualFile("favicon.ico", 256));
+
