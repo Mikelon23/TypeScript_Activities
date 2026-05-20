@@ -117,3 +117,9 @@ function runFileSystemDemo() {
   console.log(`Solo /src: ${srcDir.getSize()} bytes`);
   console.log(`Solo /public: ${publicDir.getSize()} bytes`);
 
+  console.log("\n Buscando archivos:");
+  const found = root.find("Button.tsx");
+  if (found) {
+    console.log(`  Encontrado: "${found.name}" — Tamaño: ${found.getSize()} bytes`);
+  }
+
