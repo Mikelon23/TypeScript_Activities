@@ -104,3 +104,8 @@ function runFileSystemDemo() {
     .add(new VirtualFile("logo.svg", 8192))
     .add(new VirtualFile("favicon.ico", 256));
 
+  root
+    .add(srcDir)
+    .add(publicDir)
+    .add(new VirtualFile("package.json", 640))
+    .add(new VirtualFile("tsconfig.json", 384));
