@@ -57,3 +57,8 @@ class QueryBuilder {
     return this;
   }
 
+  join(type: JoinType, table: string, on: string): this {
+    this.joins.push({ type, table, on });
+    return this;
+  }
+
