@@ -27,3 +27,7 @@ interface WhereCondition {
 class QueryBuilder {
   private tableName: string = "";
   private selectedColumns: string[] = [];
+  private conditions: { clause: WhereCondition; conjunction: "AND" | "OR" }[] = [];
+  private joins: { type: JoinType; table: string; on: string }[] = [];
+  private orderByClauses: { column: string; direction: OrderDirection }[] = [];
+  private groupByColumns: string[] = [];
