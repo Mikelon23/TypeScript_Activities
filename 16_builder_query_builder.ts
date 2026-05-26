@@ -42,3 +42,8 @@ class QueryBuilder {
     return this;
   }
 
+  select(...columns: string[]): this {
+    this.selectedColumns.push(...columns);
+    return this;
+  }
+
