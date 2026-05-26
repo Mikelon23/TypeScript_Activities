@@ -31,3 +31,14 @@ class QueryBuilder {
   private joins: { type: JoinType; table: string; on: string }[] = [];
   private orderByClauses: { column: string; direction: OrderDirection }[] = [];
   private groupByColumns: string[] = [];
+  private havingClause: string = "";
+  private limitValue?: number;
+  private offsetValue?: number;
+
+  // ── DSL Fluent ─────────────────────────────────────────────────────────────
+
+  from(table: string): this {
+    this.tableName = table;
+    return this;
+  }
+
