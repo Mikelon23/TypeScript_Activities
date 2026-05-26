@@ -47,3 +47,8 @@ class QueryBuilder {
     return this;
   }
 
+  where(column: string, operator: WhereCondition["operator"], value?: WhereCondition["value"]): this {
+    this.conditions.push({ clause: { column, operator, value }, conjunction: "AND" });
+    return this;
+  }
+
