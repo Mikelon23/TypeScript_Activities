@@ -52,3 +52,8 @@ class QueryBuilder {
     return this;
   }
 
+  orWhere(column: string, operator: WhereCondition["operator"], value?: WhereCondition["value"]): this {
+    this.conditions.push({ clause: { column, operator, value }, conjunction: "OR" });
+    return this;
+  }
+
