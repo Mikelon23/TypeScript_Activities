@@ -22,3 +22,8 @@ interface WhereCondition {
   value?: string | number | (string | number)[];
 }
 
+// ── Query Builder ─────────────────────────────────────────────────────────────
+
+class QueryBuilder {
+  private tableName: string = "";
+  private selectedColumns: string[] = [];
