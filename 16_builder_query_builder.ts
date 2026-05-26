@@ -16,3 +16,9 @@
 type OrderDirection = "ASC" | "DESC";
 type JoinType = "INNER" | "LEFT" | "RIGHT" | "FULL";
 
+interface WhereCondition {
+  column: string;
+  operator: "=" | "!=" | ">" | "<" | ">=" | "<=" | "LIKE" | "IN" | "IS NULL" | "IS NOT NULL";
+  value?: string | number | (string | number)[];
+}
+
