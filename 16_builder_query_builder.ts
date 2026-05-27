@@ -82,3 +82,8 @@ class QueryBuilder {
     return this;
   }
 
+  offset(n: number): this {
+    this.offsetValue = n;
+    return this;
+  }
+
