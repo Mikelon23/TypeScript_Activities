@@ -62,3 +62,8 @@ class QueryBuilder {
     return this;
   }
 
+  orderBy(column: string, direction: OrderDirection = "ASC"): this {
+    this.orderByClauses.push({ column, direction });
+    return this;
+  }
+
