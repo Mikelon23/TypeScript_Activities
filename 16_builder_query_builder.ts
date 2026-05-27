@@ -67,3 +67,8 @@ class QueryBuilder {
     return this;
   }
 
+  groupBy(...columns: string[]): this {
+    this.groupByColumns.push(...columns);
+    return this;
+  }
+
