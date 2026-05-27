@@ -76,3 +76,9 @@ class QueryBuilder {
     this.havingClause = clause;
     return this;
   }
+
+  limit(n: number): this {
+    this.limitValue = n;
+    return this;
+  }
+
