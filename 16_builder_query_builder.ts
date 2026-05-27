@@ -72,3 +72,7 @@ class QueryBuilder {
     return this;
   }
 
+  having(clause: string): this {
+    this.havingClause = clause;
+    return this;
+  }
