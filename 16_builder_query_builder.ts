@@ -102,3 +102,8 @@ class QueryBuilder {
     const cols = this.selectedColumns.length > 0 ? this.selectedColumns.join(", ") : "*";
     let query = `SELECT ${cols} FROM ${this.tableName}`;
 
+    // JOINs
+    this.joins.forEach(j => {
+      query += ` ${j.type} JOIN ${j.table} ON ${j.on}`;
+    });
+
