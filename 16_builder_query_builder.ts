@@ -99,3 +99,6 @@ class QueryBuilder {
   build(): string {
     if (!this.tableName) throw new Error("Debes especificar una tabla con .from()");
 
+    const cols = this.selectedColumns.length > 0 ? this.selectedColumns.join(", ") : "*";
+    let query = `SELECT ${cols} FROM ${this.tableName}`;
+
