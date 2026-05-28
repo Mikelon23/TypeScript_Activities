@@ -96,3 +96,6 @@ class QueryBuilder {
     return String(value);
   }
 
+  build(): string {
+    if (!this.tableName) throw new Error("Debes especificar una tabla con .from()");
+
