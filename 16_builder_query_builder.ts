@@ -87,3 +87,7 @@ class QueryBuilder {
     return this;
   }
 
+  // ── Compilación ────────────────────────────────────────────────────────────
+
+  private formatValue(value: WhereCondition["value"]): string {
+    if (value === undefined) return "";
