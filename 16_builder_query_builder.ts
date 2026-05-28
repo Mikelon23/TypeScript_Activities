@@ -91,3 +91,8 @@ class QueryBuilder {
 
   private formatValue(value: WhereCondition["value"]): string {
     if (value === undefined) return "";
+    if (Array.isArray(value)) return `(${value.map(v => `'${v}'`).join(", ")})`;
+    if (typeof value === "string") return `'${value}'`;
+    return String(value);
+  }
+
