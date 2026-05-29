@@ -107,3 +107,7 @@ class QueryBuilder {
       query += ` ${j.type} JOIN ${j.table} ON ${j.on}`;
     });
 
+    // WHERE
+    if (this.conditions.length > 0) {
+      const whereParts = this.conditions.map(({ clause, conjunction }, idx) => {
+        const { column, operator, value } = clause;
