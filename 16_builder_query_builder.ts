@@ -119,3 +119,8 @@ class QueryBuilder {
         } else {
           part = `${column} ${operator} ${this.formatValue(value)}`;
         }
+        return idx === 0 ? part : `${conjunction} ${part}`;
+      });
+      query += ` WHERE ${whereParts.join(" ")}`;
+    }
+
