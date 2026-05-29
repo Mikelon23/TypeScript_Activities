@@ -116,3 +116,6 @@ class QueryBuilder {
           part = `${column} ${operator}`;
         } else if (operator === "IN") {
           part = `${column} IN ${this.formatValue(value)}`;
+        } else {
+          part = `${column} ${operator} ${this.formatValue(value)}`;
+        }
