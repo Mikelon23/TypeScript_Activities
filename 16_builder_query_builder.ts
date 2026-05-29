@@ -111,3 +111,8 @@ class QueryBuilder {
     if (this.conditions.length > 0) {
       const whereParts = this.conditions.map(({ clause, conjunction }, idx) => {
         const { column, operator, value } = clause;
+        let part = "";
+        if (operator === "IS NULL" || operator === "IS NOT NULL") {
+          part = `${column} ${operator}`;
+        } else if (operator === "IN") {
+          part = `${column} IN ${this.formatValue(value)}`;
