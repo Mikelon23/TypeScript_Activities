@@ -132,3 +132,9 @@ class QueryBuilder {
     // HAVING
     if (this.havingClause) query += ` HAVING ${this.havingClause}`;
 
+    // ORDER BY
+    if (this.orderByClauses.length > 0) {
+      const orderStr = this.orderByClauses.map(o => `${o.column} ${o.direction}`).join(", ");
+      query += ` ORDER BY ${orderStr}`;
+    }
+
