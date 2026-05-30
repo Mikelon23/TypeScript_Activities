@@ -124,3 +124,7 @@ class QueryBuilder {
       query += ` WHERE ${whereParts.join(" ")}`;
     }
 
+    // GROUP BY
+    if (this.groupByColumns.length > 0) {
+      query += ` GROUP BY ${this.groupByColumns.join(", ")}`;
+    }
