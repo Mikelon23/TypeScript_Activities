@@ -138,3 +138,7 @@ class QueryBuilder {
       query += ` ORDER BY ${orderStr}`;
     }
 
+    // LIMIT / OFFSET
+    if (this.limitValue !== undefined) query += ` LIMIT ${this.limitValue}`;
+    if (this.offsetValue !== undefined) query += ` OFFSET ${this.offsetValue}`;
+
