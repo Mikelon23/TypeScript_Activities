@@ -128,3 +128,7 @@ class QueryBuilder {
     if (this.groupByColumns.length > 0) {
       query += ` GROUP BY ${this.groupByColumns.join(", ")}`;
     }
+
+    // HAVING
+    if (this.havingClause) query += ` HAVING ${this.havingClause}`;
+
