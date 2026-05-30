@@ -142,3 +142,7 @@ class QueryBuilder {
     if (this.limitValue !== undefined) query += ` LIMIT ${this.limitValue}`;
     if (this.offsetValue !== undefined) query += ` OFFSET ${this.offsetValue}`;
 
+    return query + ";";
+  }
+}
+
