@@ -179,3 +179,6 @@ console.log("  ", q2);
 const q3 = new QueryBuilder()
   .from("products")
   .select("name", "price", "stock")
+  .where("category_id", "IN", [1, 2, 3])
+  .where("deleted_at", "IS NULL")
+  .orWhere("featured", "=", 1)
