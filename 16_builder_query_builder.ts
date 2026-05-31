@@ -162,3 +162,8 @@ const q1 = new QueryBuilder()
 console.log("Query 1 (Usuarios activos mayores de edad, paginado):");
 console.log("  ", q1);
 
+const q2 = new QueryBuilder()
+  .from("orders")
+  .select("users.name", "COUNT(orders.id) AS total_orders", "SUM(orders.amount) AS revenue")
+  .join("INNER", "users", "orders.user_id = users.id")
+  .where("orders.status", "IN", ["completed", "shipped"])
