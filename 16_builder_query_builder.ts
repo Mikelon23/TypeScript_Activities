@@ -182,3 +182,7 @@ const q3 = new QueryBuilder()
   .where("category_id", "IN", [1, 2, 3])
   .where("deleted_at", "IS NULL")
   .orWhere("featured", "=", 1)
+  .orderBy("price", "ASC")
+  .build();
+console.log("\n Query 3 (Productos disponibles con OR condition):");
+console.log("  ", q3);
