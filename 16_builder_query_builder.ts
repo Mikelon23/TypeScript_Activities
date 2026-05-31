@@ -167,3 +167,12 @@ const q2 = new QueryBuilder()
   .select("users.name", "COUNT(orders.id) AS total_orders", "SUM(orders.amount) AS revenue")
   .join("INNER", "users", "orders.user_id = users.id")
   .where("orders.status", "IN", ["completed", "shipped"])
+  .where("orders.created_at", ">", "2025-01-01")
+  .groupBy("users.name")
+  .having("revenue > 1000")
+  .orderBy("revenue", "DESC")
+  .limit(5)
+  .build();
+console.log("\n Query 2 (Top 5 clientes por ingresos con JOIN):");
+console.log("  ", q2);
+
