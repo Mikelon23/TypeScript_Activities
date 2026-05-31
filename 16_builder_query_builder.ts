@@ -146,3 +146,11 @@ class QueryBuilder {
   }
 }
 
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+console.log("--- Iniciando Demo: Builder — QueryBuilder SQL Tipado ---\n");
+
+const q1 = new QueryBuilder()
+  .from("users")
+  .select("id", "name", "email")
+  .where("age", ">=", 18)
