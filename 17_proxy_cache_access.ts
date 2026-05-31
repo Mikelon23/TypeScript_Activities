@@ -21,3 +21,9 @@ interface Employee {
   department: string;
 }
 
+interface IEmployeeService {
+  findById(id: string, requesterRole: string): Employee | null;
+  findAll(requesterRole: string): Employee[];
+}
+
+
