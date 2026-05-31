@@ -27,3 +27,6 @@ interface IEmployeeService {
 }
 
 
+class EmployeeDatabase implements IEmployeeService {
+  private db: Employee[] = [
+    { id: "e1", name: "Miguel Hernández", role: "developer", salary: 85000, department: "Engineering" },
