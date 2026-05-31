@@ -154,3 +154,11 @@ const q1 = new QueryBuilder()
   .from("users")
   .select("id", "name", "email")
   .where("age", ">=", 18)
+  .where("status", "=", "active")
+  .orderBy("name", "ASC")
+  .limit(10)
+  .offset(20)
+  .build();
+console.log("Query 1 (Usuarios activos mayores de edad, paginado):");
+console.log("  ", q1);
+
