@@ -176,3 +176,6 @@ const q2 = new QueryBuilder()
 console.log("\n Query 2 (Top 5 clientes por ingresos con JOIN):");
 console.log("  ", q2);
 
+const q3 = new QueryBuilder()
+  .from("products")
+  .select("name", "price", "stock")
