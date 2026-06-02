@@ -43,3 +43,8 @@ class EmployeeDatabase implements IEmployeeService {
     return result;
   }
 
+  findById(id: string, _requesterRole: string): Employee | null {
+    console.log(`[DB] Ejecutando SELECT * FROM employees WHERE id = '${id}'`);
+    return this.slowQuery(() => this.db.find(e => e.id === id) ?? null);
+  }
+
