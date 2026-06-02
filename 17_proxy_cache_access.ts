@@ -35,3 +35,11 @@ class EmployeeDatabase implements IEmployeeService {
     { id: "e4", name: "Laura Torres", role: "developer", salary: 90000, department: "Engineering" },
   ];
 
+  private slowQuery<T>(fn: () => T): T {
+    // Simulación de latencia (síncrona para este ejemplo)
+    const start = Date.now();
+    const result = fn();
+    console.log(`[DB] Query completada en ~${Date.now() - start}ms`);
+    return result;
+  }
+
