@@ -70,3 +70,7 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
     return ["admin", "hr", "manager"].includes(role.toLowerCase());
   }
 
+  private sanitize(employee: Employee, requesterRole: string): Employee {
+    if (!this.canViewSalary(requesterRole)) {
+      return { ...employee, salary: -1 }; // Ocultar salario
+    }
