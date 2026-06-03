@@ -54,3 +54,10 @@ class EmployeeDatabase implements IEmployeeService {
   }
 }
 
+// ── Proxy: Caché + Control de Acceso ──────────────────────────────────────────
+
+class SecuredCachedEmployeeProxy implements IEmployeeService {
+  private cache: Map<string, { data: Employee | null; expiresAt: number }> = new Map();
+  private allCacheExpiry: number = 0;
+  private cachedAll: Employee[] | null = null;
+
