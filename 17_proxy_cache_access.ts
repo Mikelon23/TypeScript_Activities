@@ -74,3 +74,6 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
     if (!this.canViewSalary(requesterRole)) {
       return { ...employee, salary: -1 }; // Ocultar salario
     }
+    return employee;
+  }
+
