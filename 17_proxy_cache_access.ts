@@ -65,3 +65,8 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
     private readonly service: IEmployeeService,
     private readonly ttlMs: number = 5000 // caché por 5 segundos
   ) { }
+
+  private canViewSalary(role: string): boolean {
+    return ["admin", "hr", "manager"].includes(role.toLowerCase());
+  }
+
