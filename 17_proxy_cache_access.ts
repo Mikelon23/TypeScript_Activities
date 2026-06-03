@@ -61,3 +61,7 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
   private allCacheExpiry: number = 0;
   private cachedAll: Employee[] | null = null;
 
+  constructor(
+    private readonly service: IEmployeeService,
+    private readonly ttlMs: number = 5000 // caché por 5 segundos
+  ) { }
