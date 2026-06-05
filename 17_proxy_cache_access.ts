@@ -93,3 +93,9 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
     return result ? this.sanitize(result, requesterRole) : null;
   }
 
+  findAll(requesterRole: string): Employee[] {
+    if (this.cachedAll && Date.now() < this.allCacheExpiry) {
+      console.log(`[Proxy Cache] HIT para findAll. Sin llamada a DB.`);
+      return this.cachedAll.map(e => this.sanitize(e, requesterRole));
+    }
+
