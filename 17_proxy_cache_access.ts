@@ -86,3 +86,6 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
       return cached.data ? this.sanitize(cached.data, requesterRole) : null;
     }
 
+    console.log(`[Proxy Cache] MISS para ID "${id}". Consultando DB...`);
+    const result = this.service.findById(id, requesterRole);
+    this.cache.set(cacheKey, { data: result, expiresAt: Date.now() + this.ttlMs });
