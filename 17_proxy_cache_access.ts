@@ -99,3 +99,7 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
       return this.cachedAll.map(e => this.sanitize(e, requesterRole));
     }
 
+    console.log(`[Proxy Cache] MISS para findAll. Consultando DB...`);
+    const result = this.service.findAll(requesterRole);
+    this.cachedAll = result;
+    this.allCacheExpiry = Date.now() + this.ttlMs;
