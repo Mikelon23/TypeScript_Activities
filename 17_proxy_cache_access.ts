@@ -113,3 +113,6 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
 function runProxyDemo() {
   console.log("--- Iniciando Demo: Proxy — Caché + Control de Acceso ---\n");
 
+  const proxy: IEmployeeService = new SecuredCachedEmployeeProxy(new EmployeeDatabase(), 10000);
+
+  console.log("Llamada 1 — Developer consulta empleado e1 (MISS → DB):");
