@@ -103,3 +103,8 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
     const result = this.service.findAll(requesterRole);
     this.cachedAll = result;
     this.allCacheExpiry = Date.now() + this.ttlMs;
+
+    return result.map(e => this.sanitize(e, requesterRole));
+  }
+}
+
