@@ -108,3 +108,8 @@ class SecuredCachedEmployeeProxy implements IEmployeeService {
   }
 }
 
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+function runProxyDemo() {
+  console.log("--- Iniciando Demo: Proxy — Caché + Control de Acceso ---\n");
+
