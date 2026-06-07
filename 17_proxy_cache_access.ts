@@ -116,3 +116,6 @@ function runProxyDemo() {
   const proxy: IEmployeeService = new SecuredCachedEmployeeProxy(new EmployeeDatabase(), 10000);
 
   console.log("Llamada 1 — Developer consulta empleado e1 (MISS → DB):");
+  const emp1 = proxy.findById("e1", "developer");
+  console.log(`Resultado: ${JSON.stringify(emp1)}\n`);
+
