@@ -121,3 +121,7 @@ function runProxyDemo() {
   const emp1Cached = proxy.findById("e1", "developer");
   console.log(`Resultado: ${JSON.stringify(emp1Cached)}\n`);
 
+  console.log("Llamada 3 — Manager consulta e1 (HIT caché, VE el salario):");
+  const emp1Manager = proxy.findById("e1", "manager");
+  console.log(`Resultado: ${JSON.stringify(emp1Manager)}\n`);
+
