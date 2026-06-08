@@ -18,3 +18,7 @@
 class LazyPipeline<T> implements Iterable<T> {
   constructor(private readonly source: Iterable<T>) { }
 
+  [Symbol.iterator](): Iterator<T> {
+    return this.source[Symbol.iterator]();
+  }
+
