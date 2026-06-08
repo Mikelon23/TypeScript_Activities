@@ -129,3 +129,8 @@ function runProxyDemo() {
   const allHR = proxy.findAll("hr");
   allHR.forEach(e => console.log(`- ${e.name}: $${e.salary}`));
 
+  console.log("\nLlamada 5 — Developer consulta TODOS (HIT caché, salarios ocultos):");
+  const allDev = proxy.findAll("developer");
+  allDev.forEach(e => console.log(`- ${e.name}: ${e.salary === -1 ? "🔒 OCULTO" : `$${e.salary}`}`));
+}
+
