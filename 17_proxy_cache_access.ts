@@ -125,3 +125,7 @@ function runProxyDemo() {
   const emp1Manager = proxy.findById("e1", "manager");
   console.log(`Resultado: ${JSON.stringify(emp1Manager)}\n`);
 
+  console.log("Llamada 4 — HR consulta TODOS los empleados (MISS → DB):");
+  const allHR = proxy.findAll("hr");
+  allHR.forEach(e => console.log(`- ${e.name}: $${e.salary}`));
+
