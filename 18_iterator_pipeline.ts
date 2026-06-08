@@ -1,0 +1,20 @@
+/**
+ * Ejercicio 18: Iterator Pattern — Motor de Pipelines de Transformación de Datos
+ * Dificultad: Alta (Innovador)
+ *
+ * Problema en la vida real / REVOLUCIÓN:
+ * Apache Spark, RxJS, y los nuevos frameworks de ML pipelines procesan millones de
+ * registros de forma LAZY (sin cargar todo en memoria). La clave: cada operación
+ * produce un iterador que solo calcula cuando el dato es realmente necesario.
+ *
+ * INNOVACIÓN: Este ejercicio construye un motor de pipelines tipo "Spark Lite" en
+ * TypeScript puro usando Iteradores Nativos (Symbol.iterator). Los datos se transforman
+ * en cadena SIN arrays intermedios. Con N=10M registros, la diferencia de memoria
+ * vs .map().filter().reduce() es abismal.
+ */
+
+// ── Pipeline Lazy (Generator-based) ──────────────────────────────────────────
+
+class LazyPipeline<T> implements Iterable<T> {
+  constructor(private readonly source: Iterable<T>) { }
+
