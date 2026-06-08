@@ -117,5 +117,7 @@ function runProxyDemo() {
 
   console.log("Llamada 1 — Developer consulta empleado e1 (MISS → DB):");
   const emp1 = proxy.findById("e1", "developer");
-  console.log(`Resultado: ${JSON.stringify(emp1)}\n`);
+  console.log(`Resultado: ${JSON.stringify(emp1)}\n`); console.log("Llamada 2 — Developer vuelve a consultar e1 (HIT → Caché, sin DB):");
+  const emp1Cached = proxy.findById("e1", "developer");
+  console.log(`Resultado: ${JSON.stringify(emp1Cached)}\n`);
 
