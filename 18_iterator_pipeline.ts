@@ -22,3 +22,7 @@ class LazyPipeline<T> implements Iterable<T> {
     return this.source[Symbol.iterator]();
   }
 
+  // Transforma cada elemento (LAZY - no ejecuta hasta collect())
+  map<U>(fn: (item: T) => U): LazyPipeline<U> {
+    const source = this.source;
+    return new LazyPipeline<U>({
