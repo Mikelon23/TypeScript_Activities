@@ -36,3 +36,11 @@ class LazyPipeline<T> implements Iterable<T> {
   filter(predicate: (item: T) => boolean): LazyPipeline<T> {
     const source = this.source;
     return new LazyPipeline<T>({
+      [Symbol.iterator]: function* () {
+        for (const item of source) {
+          if (predicate(item)) yield item;
+        }
+      }
+    });
+  }
+
