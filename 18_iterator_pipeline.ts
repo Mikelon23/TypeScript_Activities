@@ -58,3 +58,7 @@ class LazyPipeline<T> implements Iterable<T> {
     });
   }
 
+  // Transforma y aplana (flatMap LAZY)
+  flatMap<U>(fn: (item: T) => Iterable<U>): LazyPipeline<U> {
+    const source = this.source;
+    return new LazyPipeline<U>({
