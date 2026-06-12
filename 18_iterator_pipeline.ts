@@ -62,3 +62,9 @@ class LazyPipeline<T> implements Iterable<T> {
   flatMap<U>(fn: (item: T) => Iterable<U>): LazyPipeline<U> {
     const source = this.source;
     return new LazyPipeline<U>({
+      [Symbol.iterator]: function* () {
+        for (const item of source) yield* fn(item);
+      }
+    });
+  }
+
