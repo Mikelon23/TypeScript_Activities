@@ -49,3 +49,12 @@ class LazyPipeline<T> implements Iterable<T> {
     const source = this.source;
     return new LazyPipeline<T>({
       [Symbol.iterator]: function* () {
+        let count = 0;
+        for (const item of source) {
+          if (count++ >= n) break;
+          yield item;
+        }
+      }
+    });
+  }
+
