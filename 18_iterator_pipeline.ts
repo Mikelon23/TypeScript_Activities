@@ -44,3 +44,8 @@ class LazyPipeline<T> implements Iterable<T> {
     });
   }
 
+  // Toma solo N elementos (LAZY - cortocircuita el pipeline)
+  take(n: number): LazyPipeline<T> {
+    const source = this.source;
+    return new LazyPipeline<T>({
+      [Symbol.iterator]: function* () {
