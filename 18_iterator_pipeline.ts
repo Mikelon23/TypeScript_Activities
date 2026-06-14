@@ -112,3 +112,9 @@ class LazyPipeline<T> implements Iterable<T> {
   // Genera un generador infinito desde 0...∞ (solo útil con .take())
   static range(start: number = 0, end: number = Infinity, step: number = 1): LazyPipeline<number> {
     return new LazyPipeline<number>({
+      [Symbol.iterator]: function* () {
+        for (let i = start; i < end; i += step) yield i;
+      }
+    });
+  }
+
