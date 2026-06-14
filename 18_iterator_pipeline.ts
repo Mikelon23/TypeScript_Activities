@@ -94,3 +94,9 @@ class LazyPipeline<T> implements Iterable<T> {
     return acc;
   }
 
+  count(): number {
+    let n = 0;
+    for (const _ of this) n++;
+    return n;
+  }
+
