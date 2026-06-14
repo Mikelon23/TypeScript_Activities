@@ -75,3 +75,10 @@ class LazyPipeline<T> implements Iterable<T> {
       [Symbol.iterator]: function* () {
         let skipped = 0;
         for (const item of source) {
+          if (skipped++ < n) continue;
+          yield item;
+        }
+      }
+    });
+  }
+
