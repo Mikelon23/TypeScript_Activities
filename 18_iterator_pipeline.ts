@@ -88,3 +88,9 @@ class LazyPipeline<T> implements Iterable<T> {
     return Array.from(this);
   }
 
+  reduce<U>(fn: (acc: U, item: T) => U, initial: U): U {
+    let acc = initial;
+    for (const item of this) acc = fn(acc, item);
+    return acc;
+  }
+
