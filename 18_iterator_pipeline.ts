@@ -100,3 +100,8 @@ class LazyPipeline<T> implements Iterable<T> {
     return n;
   }
 
+  first(): T | undefined {
+    for (const item of this) return item;
+    return undefined;
+  }
+
