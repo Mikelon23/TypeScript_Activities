@@ -82,3 +82,9 @@ class LazyPipeline<T> implements Iterable<T> {
     });
   }
 
+  // ── Terminadores (Evalúan el pipeline) ──────────────────────────────────────
+
+  collect(): T[] {
+    return Array.from(this);
+  }
+
