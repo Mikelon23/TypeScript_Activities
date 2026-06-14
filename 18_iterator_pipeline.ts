@@ -72,3 +72,6 @@ class LazyPipeline<T> implements Iterable<T> {
   skip(n: number): LazyPipeline<T> {
     const source = this.source;
     return new LazyPipeline<T>({
+      [Symbol.iterator]: function* () {
+        let skipped = 0;
+        for (const item of source) {
