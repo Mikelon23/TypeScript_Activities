@@ -105,3 +105,7 @@ class LazyPipeline<T> implements Iterable<T> {
     return undefined;
   }
 
+  forEach(fn: (item: T) => void): void {
+    for (const item of this) fn(item);
+  }
+
