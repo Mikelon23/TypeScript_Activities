@@ -153,3 +153,6 @@ function runPipelineDemo() {
       };
     }
   }
+
+  console.log(" Dataset: 10,000 registros de ventas (generados lazy)");
+
