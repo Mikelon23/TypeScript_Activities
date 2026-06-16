@@ -124,3 +124,8 @@ class LazyPipeline<T> implements Iterable<T> {
   }
 }
 
+// ── Demo ──────────────────────────────────────────────────────────────────────
+
+interface SalesRecord {
+  id: number;
+  product: string;
