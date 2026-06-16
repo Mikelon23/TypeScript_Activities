@@ -134,3 +134,6 @@ interface SalesRecord {
   region: string;
 }
 
+function runPipelineDemo() {
+  console.log("--- Iniciando Demo: Iterator — Motor de Pipelines Lazy ---\n");
+
