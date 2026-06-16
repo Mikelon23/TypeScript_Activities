@@ -137,3 +137,8 @@ interface SalesRecord {
 function runPipelineDemo() {
   console.log("--- Iniciando Demo: Iterator — Motor de Pipelines Lazy ---\n");
 
+  // Generar datos sintéticos (simulando un dataset grande)
+  const products = ["Laptop", "Mouse", "Teclado", "Monitor", "Auriculares", "Webcam", "Hub USB"];
+  const categories = ["Hardware", "Periféricos", "Audio/Video"];
+  const regions = ["Norte", "Sur", "Centro", "CDMX"];
+
