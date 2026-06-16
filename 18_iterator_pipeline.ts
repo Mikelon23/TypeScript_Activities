@@ -146,3 +146,10 @@ function runPipelineDemo() {
     for (let i = 1; i <= 10_000; i++) {
       yield {
         id: i,
+        product: products[i % products.length],
+        category: categories[i % categories.length],
+        amount: Math.floor(Math.random() * 5000) + 100,
+        region: regions[i % regions.length],
+      };
+    }
+  }
