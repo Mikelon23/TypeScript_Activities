@@ -142,3 +142,7 @@ function runPipelineDemo() {
   const categories = ["Hardware", "Periféricos", "Audio/Video"];
   const regions = ["Norte", "Sur", "Centro", "CDMX"];
 
+  function* generateSalesData(): Generator<SalesRecord> {
+    for (let i = 1; i <= 10_000; i++) {
+      yield {
+        id: i,
