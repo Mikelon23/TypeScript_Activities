@@ -118,3 +118,9 @@ class LazyPipeline<T> implements Iterable<T> {
     });
   }
 
+  // Crea un pipeline desde un array o iterable existente
+  static from<T>(data: Iterable<T>): LazyPipeline<T> {
+    return new LazyPipeline(data);
+  }
+}
+
