@@ -167,3 +167,8 @@ function runPipelineDemo() {
   console.log("\n Top 5 ventas de Hardware en CDMX > $1000:");
   filteredSales.forEach(r => console.log(`  [${r.id}] ${r.product}: $${r.amount}`));
 
+  // 2. Suma total de ventas de "Periféricos" (terminador reduce)
+  const totalPerifericos = LazyPipeline.from(generateSalesData())
+    .filter(r => r.category === "Periféricos")
+    .reduce((acc, r) => acc + r.amount, 0);
+
