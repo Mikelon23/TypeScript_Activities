@@ -156,3 +156,7 @@ function runPipelineDemo() {
 
   console.log(" Dataset: 10,000 registros de ventas (generados lazy)");
 
+  // 1. Pipeline: Solo ventas de "Hardware" en la región "CDMX" mayores a $1000
+  const filteredSales = LazyPipeline.from(generateSalesData())
+    .filter(r => r.category === "Hardware")
+    .filter(r => r.region === "CDMX")
