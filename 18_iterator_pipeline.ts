@@ -160,3 +160,7 @@ function runPipelineDemo() {
   const filteredSales = LazyPipeline.from(generateSalesData())
     .filter(r => r.category === "Hardware")
     .filter(r => r.region === "CDMX")
+    .filter(r => r.amount > 1000)
+    .take(5)
+    .collect();
+
