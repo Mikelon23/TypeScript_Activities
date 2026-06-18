@@ -164,3 +164,6 @@ function runPipelineDemo() {
     .take(5)
     .collect();
 
+  console.log("\n Top 5 ventas de Hardware en CDMX > $1000:");
+  filteredSales.forEach(r => console.log(`  [${r.id}] ${r.product}: $${r.amount}`));
+
