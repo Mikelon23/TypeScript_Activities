@@ -172,3 +172,5 @@ function runPipelineDemo() {
     .filter(r => r.category === "Periféricos")
     .reduce((acc, r) => acc + r.amount, 0);
 
+  console.log(`\n Revenue total de Periféricos: $${totalPerifericos.toLocaleString()}`);
+
