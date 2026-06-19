@@ -181,3 +181,6 @@ function runPipelineDemo() {
     const count = LazyPipeline.from(generateSalesData())
       .filter(r => r.category === cat)
       .count();
+    console.log(`  ${cat}: ${count} registros`);
+  });
+
