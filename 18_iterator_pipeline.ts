@@ -177,3 +177,7 @@ function runPipelineDemo() {
   // 3. Conteo por categoría usando pipelines separados
   const categories_ = ["Hardware", "Periféricos", "Audio/Video"] as const;
   console.log("\n Conteo de ventas por categoría:");
+  categories_.forEach(cat => {
+    const count = LazyPipeline.from(generateSalesData())
+      .filter(r => r.category === cat)
+      .count();
