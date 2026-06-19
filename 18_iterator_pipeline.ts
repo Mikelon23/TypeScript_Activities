@@ -187,3 +187,6 @@ function runPipelineDemo() {
   // 4. Generador infinito de Fibonacci (¡sin límite! solo con .take())
   function* fibonacci(): Generator<number> {
     let [a, b] = [0, 1];
+    while (true) { yield a;[a, b] = [b, a + b]; }
+  }
+
