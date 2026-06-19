@@ -174,3 +174,6 @@ function runPipelineDemo() {
 
   console.log(`\n Revenue total de Periféricos: $${totalPerifericos.toLocaleString()}`);
 
+  // 3. Conteo por categoría usando pipelines separados
+  const categories_ = ["Hardware", "Periféricos", "Audio/Video"] as const;
+  console.log("\n Conteo de ventas por categoría:");
