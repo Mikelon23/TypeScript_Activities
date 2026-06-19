@@ -184,3 +184,6 @@ function runPipelineDemo() {
     console.log(`  ${cat}: ${count} registros`);
   });
 
+  // 4. Generador infinito de Fibonacci (¡sin límite! solo con .take())
+  function* fibonacci(): Generator<number> {
+    let [a, b] = [0, 1];
