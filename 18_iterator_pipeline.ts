@@ -190,3 +190,8 @@ function runPipelineDemo() {
     while (true) { yield a;[a, b] = [b, a + b]; }
   }
 
+  const fibs = LazyPipeline.from(fibonacci())
+    .filter(n => n % 2 === 0) // Solo pares
+    .take(8)
+    .collect();
+
