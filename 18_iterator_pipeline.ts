@@ -205,3 +205,8 @@ function runPipelineDemo() {
     .take(10)
     .collect();
 
+  console.log("\n Cuadrados de los primeros 10 números impares:");
+  console.log(" ", squaresOfOdds);
+}
+
+runPipelineDemo();
