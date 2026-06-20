@@ -201,3 +201,7 @@ function runPipelineDemo() {
   // 5. Range + transformación
   const squaresOfOdds = LazyPipeline.range(1, Infinity)
     .filter(n => n % 2 !== 0)
+    .map(n => n * n)
+    .take(10)
+    .collect();
+
