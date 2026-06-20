@@ -198,3 +198,6 @@ function runPipelineDemo() {
   console.log("\n Primeros 8 números de Fibonacci PARES (desde infinito):");
   console.log(" ", fibs);
 
+  // 5. Range + transformación
+  const squaresOfOdds = LazyPipeline.range(1, Infinity)
+    .filter(n => n % 2 !== 0)
