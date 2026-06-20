@@ -195,3 +195,6 @@ function runPipelineDemo() {
     .take(8)
     .collect();
 
+  console.log("\n Primeros 8 números de Fibonacci PARES (desde infinito):");
+  console.log(" ", fibs);
+
